@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarController">
+<!-- <div class="navbar navbar-default navbar-static-top" ng-controller="NavbarController">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">mvp</a>
+      <a href="/" class="navbar-brand">Culturalyst</a>
     </div>
     <div uib-collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
@@ -26,4 +26,98 @@
       </ul>
     </div>
   </div>
+</div> -->
+
+<div layout="row" ng-controller="NavbarController">
+  <md-sidenav md-component-id="left" class="md-sidenav-left">
+    <md-toolbar class="md-whiteframe-z1">
+      <h3>Menu</h3>
+    </md-toolbar>
+
+    <md-list>
+
+      <md-list-item hide-gt-xs class="hide_link">
+          <md-button ng-click="closeLeftMenu()">
+           <a ui-sref="main"><h3>Home</h3></a>
+          </md-button>
+      </md-list-item >
+
+      <md-list-item hide-gt-xs class="hide_link">
+          <md-button ng-click="closeLeftMenu()">
+           <a ui-sref="discovery"><h3>Discovery</h3></a>
+          </md-button>
+      </md-list-item >
+
+      <md-list-item ng-repeat="it in menu" class="hide_link">
+        <md-button ng-click="closeLeftMenu()"/> 
+          {{it.title}}
+        </md-button>
+      </md-list-item>
+
+      <md-list-item ng-show="isLoggedIn()" class="hide_link">
+          <md-button   ng-click="closeLeftMenu()">
+           <a ui-sref="logout"><h3>Logout</h3></a>
+          </md-button>
+      </md-list-item >
+
+    </md-list>
+
+  </md-sidenav>
+
+  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+    <md-toolbar layout="row" class="md-whiteframe-z1" ng-show="!showSearch">
+
+      <md-button id="main" class="menu" ng-click="openLeftMenu()" aria-label="Show Menu">
+        <md-icon md-svg-icon="menu"></md-icon>
+      </md-button>
+
+      <div id="navbar_left">
+          <md-button class="hide_link" hide-xs>
+            <a ui-sref="main" ui-sref-active="active">
+              <h3>Home</h3>
+            </a>
+          </md-button>
+
+        <md-button class="hide_link" hide-xs>
+           <a ui-sref="discovery"><h3>Discovery</h3></a>
+        </md-button>
+
+        <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+          <md-icon md-svg-icon="search_black"></md-icon>
+        </md-button>
+      </div>
+
+      <div id="navbar_right">
+        <md-button class="hide_link" ng-hide="isLoggedIn()" hide-xs>
+          <a ui-sref="signup"><h3>Sign Up</h3></a>
+        </md-button>
+
+        <md-button class="hide_link" ng-hide="isLoggedIn()">
+          <a ui-sref="login"><h3>Login</h3></a>
+        </md-button>   
+      </div>
+
+    </md-toolbar>
+
+    <md-toolbar class="md-hue-1" ng-show="showSearch">
+        <div class="md-toolbar-tools">
+          <md-button ng-click="showSearch = !showSearch" aria-label="Back">
+            <md-icon md-svg-icon="back_arrow"></md-icon>
+          </md-button>
+
+          <md-input-container id="search_box" md-no-float flex>
+            <input ng-model="nav.search" type="text" placeholder="Search">
+          </md-input-container>
+
+          <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+             <md-icon md-svg-icon="search_black"></md-icon>
+          </md-button>
+
+        </div>
+       
+      </md-toolbar>
+
+  </div>
+
 </div>

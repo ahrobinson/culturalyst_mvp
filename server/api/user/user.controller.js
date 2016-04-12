@@ -43,6 +43,7 @@ export function index(req, res) {
  * Creates a new user
  */
 export function create(req, res, next) {
+  console.log('hitting user create api');
   var newUser = User.build(req.body);
   newUser.setDataValue('provider', 'local');
   newUser.setDataValue('role', 'user');

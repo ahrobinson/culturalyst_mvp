@@ -1,21 +1,62 @@
 'use strict';
 
-class NavbarController {
-  //start-non-standard
-  menu = [{
-    'title': 'Home',
-    'state': 'main'
-  }];
+// class NavbarController {
+//   //start-non-standard
+//   menu = [{
+//     'title': 'Home',
+//     'state': 'main'
+//   }];
 
-  isCollapsed = true;
-  //end-non-standard
+//   isCollapsed = true;
+//   //end-non-standard
 
-  constructor(Auth) {
-    this.isLoggedIn = Auth.isLoggedIn;
-    this.isAdmin = Auth.isAdmin;
-    this.getCurrentUser = Auth.getCurrentUser;
+//   openLeftMenu($mdSidenav){
+//     //$mdSidenav('left').toggle();
+//     console.log($mdSidenav)
+//   }
+
+
+//   constructor(Auth) {
+//     this.isLoggedIn = Auth.isLoggedIn;
+//     this.isAdmin = Auth.isAdmin;
+//     this.getCurrentUser = Auth.getCurrentUser;
+//   }
+// }
+
+// angular.module('mvpApp')
+//   .controller('NavbarController', NavbarController);
+
+var app = angular.module('mvpApp');
+app.controller('NavbarController', ['$scope', '$mdSidenav', 'Auth',
+  function($scope, $mdSidenav, Auth) {
+
+  $scope.openLeftMenu = function() {
+    $mdSidenav('left').toggle();
+  };
+
+  $scope.closeLeftMenu = function(){
+    $mdSidenav('left').close();
   }
-}
 
-angular.module('mvpApp')
-  .controller('NavbarController', NavbarController);
+  $scope.isLoggedIn = function(){
+    return Auth.isLoggedIn();
+  }
+
+  $scope.getCurrentUser = function(){
+    return Auth.getCurrentUser();
+    console.log('current user', Auth.getCurrentUser());
+  }
+
+  $scope.print = function(){
+    console.log('print');
+  }
+
+
+
+  $scope.menu = [{
+    'title': 'Test',
+    'state': 'test'
+  }, 
+  ];
+
+}]);

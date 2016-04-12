@@ -19,12 +19,58 @@
  * App-wide Styles
  */
 
+/* Navbar Styling
+*/
+
+
+.hide_link a h3{
+  color: black;
+  text-decoration: none;
+}
+
+.hide_link a {
+  text-decoration: none;
+}
+
+#search_box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#navbar_left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#navbar_right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+md-toolbar h3 {
+  margin: auto;
+  font-weight: 500;
+}
+
+md-list-item > button {
+  width:100%;
+  text-align:left !important;
+  height:70px;;
+}
+
+
+/* Navbar Styling End
+*/
+
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
+
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
