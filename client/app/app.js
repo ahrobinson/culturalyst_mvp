@@ -25,6 +25,8 @@ angular.module('mvpApp', [
       .icon("search" , "./assets/svg/search.svg", 24)
       .icon("search_black", "./assets/svg/search_black.svg", 24)
       .icon("back_arrow", "./assets/svg/back_arrow.svg", 24)
+      .icon("clear_black", "./assets/svg/clear_black.svg", 24)
+      .icon("enter_black", "./assets/svg/enter_black.svg", 24)
 
     $mdThemingProvider.theme('default')
       .primaryPalette('blue-grey', {
