@@ -266,8 +266,7 @@ module.exports = function (grunt) {
         // This is so we update image references in our ng-templates
         patterns: {
           css: [
-            [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the CSS to reference our revved images'],
-             [/(assets\/svg\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the CSS to reference our SVG images']
+            [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the CSS to reference our revved images']
           ],
           js: [
             [/(assets\/images\/.*?\.(?:gif|jpeg|jpg|png|webp|svg))/gm, 'Update the JS to reference our revved images']
@@ -368,21 +367,21 @@ module.exports = function (grunt) {
             '.htaccess',
             'bower_components/**/*',
             'assets/images/{,*/}*.{webp}',
+            'assets/svg/*.svg'
             'assets/fonts/**/*',
             'index.html'
           ]
-        },{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.client %>/assets/svg',
-          src: ['fonts/*.*'],
-          dest: '<%= yeoman.dist %>/client/assets'
-          }, {
+        }, {
           expand: true,
           cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/<%= yeoman.client %>/assets',
+          dest: '<%= yeoman.dist %>/<%= yeoman.client %>/assets/images',
           src: ['generated/*']
         }, {
+          expand: true,
+          cwd: '.tmp/svg',
+          dest: '<%= yeoman.dist %>/<%= yeoman.client %>/assets/svg',
+          src: ['generated/*']
+        },{
           expand: true,
           dest: '<%= yeoman.dist %>',
           src: [
@@ -397,7 +396,7 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.client %>',
         dest: '.tmp/',
         src: ['{app,components}/**/*.css']
-      },
+      }
     },
 
     buildcontrol: {
@@ -607,8 +606,7 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.client %>/index.html': [
-            '<%= yeoman.client %>/{app,components}/**/*.css',
-            '!<%= yeoman.client %>/app/app.css'
+            '<%= yeoman.client %>/{app,components}/**/*.css'
           ]
         }
       }
