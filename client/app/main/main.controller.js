@@ -9,10 +9,15 @@ class MainController {
     this.socket = socket;
     this.awesomeThings = [];
 
+    // TODO:Setup API call to get hero photographer + hero artist name
+    $scope.photographer = 'Photographer: Alex Glustrom';
+    $scope.artist = 'Musician: Andrew Wiseman';
+
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');
     });
   }
+
 
   $onInit() {
     this.$http.get('/api/things').then(response => {

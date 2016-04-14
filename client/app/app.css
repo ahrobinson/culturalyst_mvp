@@ -24,7 +24,7 @@
 
 
 .hide_link a h3{
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -32,17 +32,11 @@
   text-decoration: none;
 }
 
+.navbar_left {
+/*  TODO: Determine padding so that the menu + search button are all the way to the left on mobile;*/
+}
+
 #search_box {
-  display: flex;
-  justify-content: flex-end;
-}
-
-#navbar_left {
-  display: flex;
-  justify-content: flex-start;
-}
-
-#navbar_right {
   display: flex;
   justify-content: flex-end;
 }
@@ -57,6 +51,9 @@ md-list-item > button {
   text-align:left !important;
   height:70px;;
 }
+
+/*Could be used to style focus of searchbar
+*//*input.md-input:focus{ color: blue; } */
 
 
 /* Navbar Styling End

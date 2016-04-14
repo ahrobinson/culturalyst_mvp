@@ -30,8 +30,10 @@ angular.module('mvpApp', [
 
     $mdThemingProvider.theme('default')
       .primaryPalette('blue-grey', {
-        'default': '50',
-        'hue-1': '50'
+        'default': '700',
+        'hue-1': '500'
       })
-      .accentPalette('orange');
+      .accentPalette('pink', {
+        'default': '500'
+      })
   });
