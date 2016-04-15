@@ -27,11 +27,34 @@ angular.module('mvpApp', [
       .icon("back_arrow", "./assets/svg/back_arrow.svg", 24)
       .icon("clear_black", "./assets/svg/clear_black.svg", 24)
       .icon("enter_black", "./assets/svg/enter_black.svg", 24)
+      .icon("discover_black", "./assets/svg/discover_black.svg", 24)
+      .icon("home_black", "./assets/svg/home_black.svg", 24)
+
+    var customPrimary = {
+        '50': '#ffffff',
+        '100': '#ffffff',
+        '200': '#ffffff',
+        '300': '#ffffff',
+        '400': '#fefefe',
+        '500': '#f1f1f1',
+        '600': '#e4e4e4',
+        '700': '#d7d7d7',
+        '800': '#cbcbcb',
+        '900': '#bebebe',
+        'A100': '#ffffff',
+        'A200': '#ffffff',
+        'A400': '#ffffff',
+        'A700': '#b1b1b1'
+    };
+    $mdThemingProvider
+        .definePalette('customPrimary', 
+                        customPrimary);
+
 
     $mdThemingProvider.theme('default')
-      .primaryPalette('blue-grey', {
-        'default': '700',
-        'hue-1': '500'
+      .primaryPalette('customPrimary', {
+        'default': '500',
+        'hue-1': '300'
       })
       .accentPalette('pink', {
         'default': '500'

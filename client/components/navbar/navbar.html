@@ -37,14 +37,14 @@
     <md-list>
 
       <md-list-item hide-gt-xs class="hide_link">
-          <md-button ng-click="closeLeftMenu()">
-           <a ui-sref="main"><h3>Home</h3></a>
+          <md-button  ng-click="closeLeftMenu()">
+            <a ui-sref="main"><h3>Home</h3></a>
           </md-button>
       </md-list-item >
 
       <md-list-item hide-gt-xs class="hide_link">
           <md-button ng-click="closeLeftMenu()">
-           <a ui-sref="discovery"><h3>Discovery</h3></a>
+          <a ui-sref="discovery"><h3>Discovery</h3></a>
           </md-button>
       </md-list-item >
 
@@ -68,7 +68,7 @@
 
     <md-toolbar layout="row"  layout-align="center center" class="md-whiteframe-z1" >
 
-      <div flex="80" class="navbar_left" >
+      <div flex="30" class="navbar_left" >
         <md-button id="main" class="menu" ng-click="openLeftMenu()" aria-label="Show Menu">
           <md-icon md-svg-icon="menu"></md-icon>
         </md-button>
@@ -83,34 +83,44 @@
             <a ui-sref="discovery"><h3>Discovery</h3></a>
         </md-button>
 
-        <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-          <md-icon md-svg-icon="search"></md-icon>
+        <md-button aria-label="Search" ng-hide="isLoggedIn()" ng-click="showSearch = !showSearch">
+          <md-icon md-svg-icon="search_black"></md-icon>
         </md-button>
       </div>
 
+      <div flex="50" id="nav_logo">
+        <img src="assets/images/logo_small.png">
+      </div>
+
+      <div class="navbar_right" layout="row">
         <md-button class="hide_link" ng-hide="isLoggedIn()" hide-xs>
           <a ui-sref="signup"><h3>Sign Up</h3></a>
         </md-button>
         <md-button class="hide_link" ng-hide="isLoggedIn()">
           <a ui-sref="login"><h3>Login</h3></a>
-        </md-button>   
+        </md-button>
+        <md-button aria-label="Search" ng-show="isLoggedIn()" ng-click="showSearch = !showSearch">
+          <md-icon md-svg-icon="search_black"></md-icon>
+        </md-button>
+      </div>   
     </md-toolbar>
 
     <md-toolbar class="md-hue-1" ng-show="showSearch">
-        <div class="md-toolbar-tools">
-<!--         TODO: Have search bar close + clear by pressing X
- -->          <md-button ng-click="showSearch = !showSearch" aria-label="Back">
-            <md-icon md-svg-icon="clear_black"></md-icon>
-          </md-button>
+      <div class="md-toolbar-tools">
+<!--         TODO: Have search bar close + clear by pressing X -->
 
-          <md-input-container id="search_box" md-no-float flex>
-            <input ng-model="nav.search" type="text" placeholder="Search">
-          </md-input-container>
+        <md-button ng-click="showSearch = !showSearch" aria-label="Back">
+          <md-icon md-svg-icon="clear_black"></md-icon>
+        </md-button>
 
-<!--           TODO: Have search functionality begin on keyboard "enter" or by pressing "check"
- -->          <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-             <md-icon md-svg-icon="enter_black"></md-icon>
-          </md-button>
+        <md-input-container id="search_box" md-no-float flex>
+          <input ng-model="nav.search" type="text" placeholder="Search">
+        </md-input-container>
+
+          <!-- TODO: Have search functionality begin on keyboard "enter" or by pressing "check" -->
+        <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+          <md-icon md-svg-icon="enter_black"></md-icon>
+        </md-button>
 
         </div>
        
