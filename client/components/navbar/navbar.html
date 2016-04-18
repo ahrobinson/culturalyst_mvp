@@ -36,13 +36,13 @@
 
     <md-list>
 
-      <md-list-item hide-gt-xs class="hide_link">
+      <md-list-item hide-gt-md class="hide_link">
           <md-button  ng-click="closeLeftMenu()">
             <a ui-sref="main"><h3>Home</h3></a>
           </md-button>
       </md-list-item >
 
-      <md-list-item hide-gt-xs class="hide_link">
+      <md-list-item hide-gt-md class="hide_link">
           <md-button ng-click="closeLeftMenu()">
           <a ui-sref="discovery"><h3>Discovery</h3></a>
           </md-button>
@@ -66,20 +66,20 @@
 
   <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
-    <md-toolbar layout="row"  layout-align="center center" class="md-whiteframe-z1" >
+    <md-toolbar layout="row" layout-align="center center" class="md-whiteframe-z1">
 
-      <div flex="30" class="navbar_left" >
+      <div class="navbar_left">
         <md-button id="main" class="menu" ng-click="openLeftMenu()" aria-label="Show Menu">
           <md-icon md-svg-icon="menu"></md-icon>
         </md-button>
 
-        <md-button class="hide_link" hide-xs>
+        <md-button class="hide_link" hide show-lg>
           <a ui-sref="main" ui-sref-active="active">
             <h3>Home</h3>
           </a>
         </md-button>
 
-        <md-button class="hide_link" hide-xs>
+        <md-button class="hide_link" hide show-lg>
             <a ui-sref="discovery"><h3>Discovery</h3></a>
         </md-button>
 
@@ -88,7 +88,7 @@
         </md-button>
       </div>
 
-      <div flex="50" id="nav_logo">
+      <div flex="45" id="nav_logo">
         <img src="assets/images/logo_small.png">
       </div>
 
@@ -96,9 +96,12 @@
         <md-button class="hide_link" ng-hide="isLoggedIn()" hide-xs>
           <a ui-sref="signup"><h3>Sign Up</h3></a>
         </md-button>
-        <md-button class="hide_link" ng-hide="isLoggedIn()">
+        <md-button class="hide_link" id="login" ng-hide="isLoggedIn()">
           <a ui-sref="login"><h3>Login</h3></a>
         </md-button>
+        <div id="navbar_right_placeholder" ng-show="isLoggedIn()">
+
+        </div>
         <md-button aria-label="Search" ng-show="isLoggedIn()" ng-click="showSearch = !showSearch">
           <md-icon md-svg-icon="search_black"></md-icon>
         </md-button>

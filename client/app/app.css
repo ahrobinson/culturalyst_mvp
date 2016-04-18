@@ -22,17 +22,18 @@
 /* Navbar Styling
 */
 
-
+/*Makes buttons not black*/
 .hide_link a h3{
   color: black;
   text-decoration: none;
 }
 
+/*Makes buttons not underlined*/
 .hide_link a {
   text-decoration: none;
 }
 
-
+/*Searchbar into flex container*/
 #search_box {
   display: flex;
   justify-content: flex-end;
@@ -43,23 +44,44 @@ md-toolbar h3 {
   font-weight: 500;
 }
 
+/*Uniform buttons in sidenav*/
 md-list-item > button {
   width:100%;
   text-align:left !important;
   height:70px;;
 }
 
+/*Logo - Designed for mobile first*/
 #nav_logo img{
-  width:150px;
+  display: flex;
+  flex-direction: row;
+  width:180px;
+  justify-content: center;
+  align-content: center;
+}
+
+/*Leftside of navbar*/
+.navbar_left{
+  display: flex;
+  flex: 35;
+}
+
+/*Rightside placeholder to equalize spacing when signed in*/
+#navbar_right_placeholder{
+  width: 53px;
+}
+
+.navbar {
+  background-color: transparent !important;
 }
 
 
-/*Could be used to style focus of searchbar
-*//*input.md-input:focus{ color: blue; } */
+/*Could be used to style focus of searchbar*/
+input.md-input:focus{ color: #E91E63; } 
 
 
 /* Navbar Styling End
-*/
+
 
 
 .browserupgrade {
@@ -70,17 +92,6 @@ md-list-item > button {
 }
 
 
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-  #nav_logo img {
-    padding-top: 3px;
-    width: 250px;
-  }
-}
 /*Responsive: Iphone6*/
 /*TODO: Add other device screen sizes*/
 @media only screen 
@@ -88,6 +99,9 @@ md-list-item > button {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2) {
 /*    Makes buttons smaller on mobile devices */
+    .navbar_left{
+      display: flex;
+    }
     .navbar_left .md-button{
       min-width:25px;
     }
@@ -98,3 +112,25 @@ md-list-item > button {
       min-width:25px;
     }
 
+   /* Adds margin to login button to center logo on mobile*/
+    .hide_link#login {
+      margin-left: 25px;
+    }
+  }
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /*Increases size of hero photo on big screens*/
+  .container {
+    max-width: 730px;
+  }
+  /*Increases size of logo on big screens*/
+  #nav_logo img {
+    padding-top: 3px;
+    width: 250px;
+  }
+  /*Right navbar placeholder size to equalize spacing when signed in*/
+  #navbar_right_placeholder {
+    width: 100px;
+  }
+}

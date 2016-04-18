@@ -1,4 +1,89 @@
-<div class="hero">
+<div ng-app="myApp">
+  <header md-page-header>
+    <div md-header-picture style="background-image:url(http://3.bp.blogspot.com/-8jk6pwVieck/TiDjWyDdWHI/AAAAAAAAAbQ/n22FFKf9bvs/s1600/259699_219094411455453_214219875276240_696700_4217591_o.jpg)"></div>
+    <md-toolbar scroll>
+      <div class="md-toolbar-tools">
+
+        <h2 md-header-title flex>Sari Yanti</h2>
+        <md-button class="md-tools" aria-label="Edit Contact">
+          <md-icon aria-label="assistant Photo" class="material-icons">&#xE3A0;</md-icon>
+        </md-button>
+        <md-button class="md-tools" aria-label="More">
+          <md-icon aria-label="assistant Photo" class="material-icons">&#xE3E3;</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <div class="main-fab">
+      <md-button aria-label="Float Action Button" class="md-fab md-accent">
+        <md-icon aria-label="airline_seat_recline_extra" class="material-icons">&#xE636;</md-icon>
+      </md-button>
+    </div>
+  </header>
+  <md-content ng-controller="MainController" md-theme="altTheme">
+    <section>
+      <md-subheader class="md-primary" sticky-state="next">Unread Messages</md-subheader>
+      <md-list layout-padding>
+        <md-list-item class="md-3-line" ng-repeat="message in messages">
+          <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+          <div class="md-list-item-text">
+            <h3>{{message.what}}</h3>
+            <h4>{{message.who}}</h4>
+            <p>
+              {{message.notes}}
+            </p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </section>
+    <section>
+      <md-subheader class="md-warn">Late Messages</md-subheader>
+      <md-list layout="column" layout-padding>
+        <md-list-item class="md-3-line" ng-repeat="message in messages">
+          <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+          <div class="md-list-item-text">
+            <h3>{{message.what}}</h3>
+            <h4>{{message.who}}</h4>
+            <p>
+              {{message.notes}}
+            </p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </section>
+    <section>
+      <md-subheader>Read Messages</md-subheader>
+      <md-list layout="column" layout-padding>
+        <md-list-item class="md-3-line" ng-repeat="message in messages">
+          <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+          <div class="md-list-item-text">
+            <h3>{{message.what}}</h3>
+            <h4>{{message.who}}</h4>
+            <p>
+              {{message.notes}}
+            </p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </section>
+    <section>
+      <md-subheader class="md-accent">Archived messages</md-subheader>
+      <md-list layout="column" layout-padding>
+        <md-list-item class="md-3-line" ng-repeat="message in messages">
+          <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+          <div class="md-list-item-text">
+            <h3>{{message.what}}</h3>
+            <h4>{{message.who}}</h4>
+            <p>
+              {{message.notes}}
+            </p>
+          </div>
+        </md-list-item>
+      </md-list>
+    </section>
+  </md-content>
+</div>
+
+<!-- <div class="hero">
   <div class="picture-overlay">
     <md-button class="md-fab" aria-label="FAB"  title="{{photographer}}">
     </md-button>
@@ -11,4 +96,12 @@
 <div class="c_description">
   <h1>What is Culturalyst?</h1>
 
-</div>
+  <div flex>
+    <md-button class="md-fab" aria-label="Big FAB">
+    </md-button>
+    <md-button class="md-fab" aria-label="Big FAB">
+    </md-button>
+    <md-button class="md-fab" aria-label="Big FAB">
+    </md-button>
+  </div>
+</div> -->

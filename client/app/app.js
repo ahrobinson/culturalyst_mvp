@@ -53,8 +53,8 @@ angular.module('mvpApp', [
 
     $mdThemingProvider.theme('default')
       .primaryPalette('customPrimary', {
-        'default': '500',
-        'hue-1': '300'
+        'default': '400',
+        'hue-1': '500'
       })
       .accentPalette('pink', {
         'default': '500'
