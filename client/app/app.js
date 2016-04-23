@@ -29,6 +29,9 @@ angular.module('mvpApp', [
       .icon("enter_black", "./assets/svg/enter_black.svg", 24)
       .icon("discover_black", "./assets/svg/discover_black.svg", 24)
       .icon("home_black", "./assets/svg/home_black.svg", 24)
+      .icon("dollar_black", "./assets/svg/dollar_black.svg", 24)
+      .icon("dollar_white", "./assets/svg/dollar_white.svg", 24)
+
 
     var customPrimary = {
         '50': '#ffffff',

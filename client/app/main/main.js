@@ -5,6 +5,6 @@ angular.module('mvpApp')
     $stateProvider
       .state('main', {
         url: '/',
-        templateUrl: 'app/main/main.html',
+        template: '<main></main>'
       });
   });

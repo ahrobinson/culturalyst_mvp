@@ -1,58 +1,3 @@
-[md-header-picture] {
-    position: relative;
-    width:100%;
-    height:0; /* Simple trick to keep a 16:9 ratio on your background image (height=0;padding-bottom=56.25%) */
-    padding-bottom: 56.25%;
-    overflow:hidden;
-    background-size:160%; /* You can override this value if your picture has a weird ratio */
-    background-position:50% 50%;
-}
-
-[scroll] {
-  position:fixed;
-  top:0;
-}
-
-/* I made a simple scale animation on float action button during scroll */
-
-.main-fab {
-  position:absolute;
-  left: calc(100% - 90px);
-  z-index: 20;
-  transform:scale(1,1);
-  transition: transform .1s ease-out;
-}
-
-.main-fab.hide {
-  transform:scale(0,0);
-  transition: transform .1s ease-out;
-}
-
-/* Lines of code below are just here to get a better aspect but optionnal */
-section {
-  height: 1600px;
-}
-
-i {
-  font-size:24px;
-}
-
-.md-tools {
-  width: 40px;
-}
-
-.muted {
-color: #bbb;
-font-size: inherit;
-font-weight: 700;
-text-align: left;
-}
-
-.md-tile-left {
-  margin-right:0!important;
-  padding-left:24px;
-  color: rgb(63,81,181);
-}
 
 /*
 Hero Image CSS*/
@@ -79,22 +24,84 @@ Hero Image CSS*/
   padding-bottom: 5px;
 }
 
-#photo{
+.main_container{
+  display: flex;
+}
+
+.description {
+  background-color: black;
+  flex-wrap: wrap;
+  min-height: 400px;
+  justify-content: space-around;
+  align-items: center;  
+  padding:20px;
+}
+
+.description .big-fab{
+  background-color: white;
+  height: 200px;
+  width: 200px;
+}
+
+.categories{
+  background-color: white;
+  flex-wrap: wrap;
+  min-height: 400px;
+  justify-content: space-around;
+  align-items: center;  
+  padding:20px;
+}
+  
+.categories .big-fab{
+  background-color: black;
+  height: 200px;
+  width: 200px;
+}
+
+.curated{
   background-color: #3F51B5;
+  flex-wrap: wrap;
+  min-height: 400px;
+  justify-content: space-around;
+  align-items: center;  
+  padding:20px;
 }
 
-.c_description {
-  display:flex;
-  flex-direction: row;
-  background:#CFD8DC;
-  height: 150px;
-  justify-content: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+.curated .big-fab{
+  background-color: #FF4081;
+  height: 200px;
+  width: 200px;
 }
 
-.c_description h1{
-  text-align: center;
+.featured{
+  background-color: #00BCD4;
+  flex-wrap: wrap;
+  min-height: 400px;
+  justify-content: space-around;
+  align-items: center;  
+  padding:20px;
 }
+
+.featured md-card {
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.music{
+  background-color: red;
+}
+
+#content.contact {
+  background-color: green;
+  border-radius: 75%;
+  padding:105px;
+  transition: all 100ms ease-out 30ms;
+}
+
+
+
+
+
 
 
 

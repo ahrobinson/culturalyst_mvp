@@ -29,40 +29,6 @@
 </div> -->
 
 <div layout="row" ng-controller="NavbarController" >
-  <md-sidenav md-component-id="left" class="md-sidenav-left">
-    <md-toolbar class="md-whiteframe-z1">
-      <h3>Menu</h3>
-    </md-toolbar>
-
-    <md-list>
-
-      <md-list-item hide-gt-md class="hide_link">
-          <md-button  ng-click="closeLeftMenu()">
-            <a ui-sref="main"><h3>Home</h3></a>
-          </md-button>
-      </md-list-item >
-
-      <md-list-item hide-gt-md class="hide_link">
-          <md-button ng-click="closeLeftMenu()">
-          <a ui-sref="discovery"><h3>Discovery</h3></a>
-          </md-button>
-      </md-list-item >
-
-      <md-list-item ng-repeat="it in menu" class="hide_link">
-        <md-button ng-click="closeLeftMenu()"/> 
-          <h3>{{it.title}}</h3>
-        </md-button>
-      </md-list-item>
-
-      <md-list-item ng-show="isLoggedIn()" class="hide_link">
-          <md-button   ng-click="closeLeftMenu()">
-           <a ui-sref="logout"><h3>Logout</h3></a>
-          </md-button>
-      </md-list-item >
-
-    </md-list>
-
-  </md-sidenav>
 
   <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
 
@@ -130,5 +96,40 @@
       </md-toolbar>
 
   </div>
+
+  <md-sidenav md-component-id="left" class="md-sidenav-left">
+    <md-toolbar class="md-whiteframe-z1">
+      <h3>Menu</h3>
+    </md-toolbar>
+
+    <md-list>
+
+      <md-list-item hide-gt-md class="hide_link">
+          <md-button  ng-click="closeLeftMenu()">
+            <a ui-sref="main"><h3>Home</h3></a>
+          </md-button>
+      </md-list-item >
+
+      <md-list-item hide-gt-md class="hide_link">
+          <md-button ng-click="closeLeftMenu()">
+          <a ui-sref="discovery"><h3>Discovery</h3></a>
+          </md-button>
+      </md-list-item >
+
+      <md-list-item ng-repeat="it in menu" class="hide_link">
+        <md-button ng-click="closeLeftMenu()"/> 
+          <h3>{{it.title}}</h3>
+        </md-button>
+      </md-list-item>
+
+      <md-list-item ng-show="isLoggedIn()" class="hide_link">
+          <md-button   ng-click="closeLeftMenu()">
+           <a ui-sref="logout"><h3>Logout</h3></a>
+          </md-button>
+      </md-list-item >
+
+    </md-list>
+
+  </md-sidenav>
 
 </div>
