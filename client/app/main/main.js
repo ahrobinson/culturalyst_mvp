@@ -7,9 +7,4 @@ angular.module('mvpApp')
         url: '/',
         template: '<main></main>'
       })
-      .state('/glance', {
-      	url:'/glance',
-      	templateUrl: 'app/main/bottom-sheet.html',
-      	controller: 'BottomSheetController'
-      })
   });
