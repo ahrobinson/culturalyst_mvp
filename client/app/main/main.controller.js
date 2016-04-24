@@ -77,28 +77,25 @@ app.controller('MainController', ['$scope','Auth', '$mdBottomSheet',
     $mdBottomSheet.show({
           templateUrl   : './app/main/bottom-sheet.html',
           controller: 'BottomSheetController',
-          parent        : angular.element(document.getElementById('content'))    
+          parent        : angular.element(document.getElementById('content')),
+          clickOutsideToClose: true   
     }).then(function(){
       console.log('yes!');
     });
   };
 
-  .controller('BottomSheetController', function($scope, $mdBottomSheet) {
-  $scope.items = [
-    { name: 'Share', icon: 'share-arrow' },
-    { name: 'Upload', icon: 'upload' },
-    { name: 'Copy', icon: 'copy' },
-    { name: 'Print this page', icon: 'print' },
-  ];
+  
+
+}])
+
+app.controller('BottomSheetController', function($scope, $mdBottomSheet) {
+  $scope.artist = "Sam"
+  $scope.test = 'Hi'
   $scope.listItemClick = function($index) {
     var clickedItem = $scope.items[$index];
     $mdBottomSheet.hide(clickedItem);
   };
 })
-
-  $scope.artist = "Sam"
-
-}])
 
 app.component('main',{
   templateUrl:'app/main/main.html',
