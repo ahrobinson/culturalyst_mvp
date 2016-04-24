@@ -6,5 +6,5 @@ angular.module('mvpApp')
       .state('main', {
         url: '/',
         template: '<main></main>'
-      })
+      });
   });

@@ -72,29 +72,61 @@ app.controller('MainController', ['$scope','Auth', '$mdBottomSheet',
     console.log('print');
   }
 
-  $scope.openBottomSheet = function() {
+  // $scope.openBottomSheet = function() {
+  //   $scope.alert = '';
+  //   $mdBottomSheet.show({
+  //         templateUrl   : './app/main/bottom-sheet/bottom-sheet.html',
+  //         controller: 'BottomSheetController',
+  //         parent        : angular.element(document.getElementById('content')),
+  //         clickOutsideToClose: true   
+  //   }).then(function(){
+  //     console.log('yes!');
+  //   });
+  // };
+
+  $scope.alert = '';
+  var listTemplate = ' <md-bottom-sheet class="md-list md-has-header">\
+  <md-subheader>Comment Actions</md-subheader>\
+  <md-list>\
+    <md-item ng-repeat="item in items">\
+      <md-button aria-label="{{item.name}}" ng-click="listItemClick($index)">\
+        <!-- Using custom inline icon until md-icon is ready. DONT USE ME! -->\
+        <md-inline-list-icon icon="{{item.icon}}"></md-inline-list-icon>\
+        <span class="md-inline-list-icon-label">{{ item.name }}</span>\
+      </md-button>\
+    </md-item>\
+  </md-list>\
+</md-bottom-sheet>'
+
+  $scope.openBottomSheet = function($event) {
     $scope.alert = '';
     $mdBottomSheet.show({
-          templateUrl   : './app/main/bottom-sheet/bottom-sheet.html',
-          controller: 'BottomSheetController',
-          parent        : angular.element(document.getElementById('content')),
-          clickOutsideToClose: true   
-    }).then(function(){
-      console.log('yes!');
+      template: listTemplate,
+      controller: 'ListBottomSheetCtrl',
+      parent        : angular.element(document.getElementById('content')),
+      targetEvent: $event
+    }).then(function(clickedItem) {
+      $scope.alert = clickedItem.name + ' clicked!';
     });
   };
 
-  
-
 }])
 
-app.controller('BottomSheetController', function($scope, $mdBottomSheet) {
-  $scope.artist = "Sam"
-  $scope.test = 'Hi'
-  $scope.listItemClick = function($index) {
-    var clickedItem = $scope.items[$index];
-    $mdBottomSheet.hide(clickedItem);
-  };
+// app.controller('BottomSheetController', function($scope, $mdBottomSheet) {
+//   $scope.test = 'Hi'
+//   $scope.listItemClick = function($index) {
+//     var clickedItem = $scope.items[$index];
+//     $mdBottomSheet.hide(clickedItem);
+//   };
+// })
+
+app.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet) {
+  $scope.items = [
+    { name: 'Share', icon: 'share' },
+    { name: 'Upload', icon: 'upload' },
+    { name: 'Copy', icon: 'copy' },
+    { name: 'Print this page', icon: 'print' },
+  ];
 })
 
 app.component('main',{
