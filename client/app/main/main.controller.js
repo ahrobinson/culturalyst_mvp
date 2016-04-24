@@ -48,8 +48,8 @@
 var app = angular.module('mvpApp')
 
 
-app.controller('MainController', ['$scope','Auth', '$mdBottomSheet', 'ngMaterial'
-  function($scope, Auth, $mdBottomSheet, ngMaterial) {
+app.controller('MainController', ['$scope','Auth', '$mdBottomSheet',
+  function($scope, Auth, $mdBottomSheet) {
 
   // $scope.openLeftMenu = function() {
   //   $mdSidenav('left').toggle();
@@ -75,7 +75,7 @@ app.controller('MainController', ['$scope','Auth', '$mdBottomSheet', 'ngMaterial
   $scope.openBottomSheet = function() {
     $scope.alert = '';
     $mdBottomSheet.show({
-          templateUrl   : './app/main/bottom-sheet.html',
+          templateUrl   : './app/main/bottom-sheet/bottom-sheet.html',
           controller: 'BottomSheetController',
           parent        : angular.element(document.getElementById('content')),
           clickOutsideToClose: true   
