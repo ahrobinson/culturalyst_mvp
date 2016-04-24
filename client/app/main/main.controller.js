@@ -48,8 +48,8 @@
 var app = angular.module('mvpApp')
 
 
-app.controller('MainController', ['$scope','Auth', '$mdBottomSheet',
-  function($scope, Auth, $mdBottomSheet) {
+app.controller('MainController', ['$scope','Auth', '$mdBottomSheet', 'ngMaterial'
+  function($scope, Auth, $mdBottomSheet, ngMaterial) {
 
   // $scope.openLeftMenu = function() {
   //   $mdSidenav('left').toggle();
