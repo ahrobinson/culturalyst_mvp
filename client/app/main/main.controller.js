@@ -85,18 +85,10 @@ app.controller('MainController', ['$scope','Auth', '$mdBottomSheet',
   // };
 
   $scope.alert = '';
-  var listTemplate = ' <md-bottom-sheet class="md-list md-has-header">\
-  <md-subheader>Comment Actions</md-subheader>\
-  <md-list>\
-    <md-item ng-repeat="item in items">\
-      <md-button aria-label="{{item.name}}" ng-click="listItemClick($index)">\
-        <!-- Using custom inline icon until md-icon is ready. DONT USE ME! -->\
-        <md-inline-list-icon icon="{{item.icon}}"></md-inline-list-icon>\
-        <span class="md-inline-list-icon-label">{{ item.name }}</span>\
-      </md-button>\
-    </md-item>\
-  </md-list>\
-</md-bottom-sheet>'
+  var listTemplate = '<md-bottom-sheet class="md-list md-has-header"><md-subheader><md-card-header>\
+      <md-card-avatar><img class="md-user-avatar" src="../../assets/images/bMike_profile.png"/></md-card-avatar>\
+      <md-card-header-text><span class="md-title">Brandan Odums</span><span class="md-subhead">Graffiti</span>\
+      </md-card-header-text></md-card-header></md-subheader><md-list><p>{{story}}</p></md-list></md-bottom-sheet>';
 
   $scope.openBottomSheet = function($event) {
     $scope.alert = '';
@@ -121,12 +113,7 @@ app.controller('MainController', ['$scope','Auth', '$mdBottomSheet',
 // })
 
 app.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet) {
-  $scope.items = [
-    { name: 'Share', icon: 'share' },
-    { name: 'Upload', icon: 'upload' },
-    { name: 'Copy', icon: 'copy' },
-    { name: 'Print this page', icon: 'print' },
-  ];
+  $scope.story="Brandan “Bmike” Odums is a highly sought after visual artist and filmmaker who uses these chosen mediums to tell stories and make statements that transform the minds of viewers as well as the spaces in which his work appears."
 })
 
 app.component('main',{
