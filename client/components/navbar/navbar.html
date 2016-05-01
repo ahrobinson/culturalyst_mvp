@@ -118,7 +118,7 @@
 
       <md-list-item ng-repeat="it in menu" class="hide_link">
         <md-button ng-click="closeLeftMenu()"/> 
-          <h3>{{it.title}}</h3>
+          <a ui-sref="{{it.state}}"><h3>{{it.title}}</h3></a>
         </md-button>
       </md-list-item>
 

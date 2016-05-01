@@ -51,14 +51,6 @@ var app = angular.module('mvpApp')
 app.controller('MainController', ['$scope','Auth', '$mdBottomSheet',
   function($scope, Auth, $mdBottomSheet) {
 
-  // $scope.openLeftMenu = function() {
-  //   $mdSidenav('left').toggle();
-  // };
-
-  // $scope.closeLeftMenu = function(){
-  //   $mdSidenav('left').close();
-  // }
-
   $scope.isLoggedIn = function(){
     return Auth.isLoggedIn();
   }
@@ -72,46 +64,51 @@ app.controller('MainController', ['$scope','Auth', '$mdBottomSheet',
     console.log('print');
   }
 
-  // $scope.openBottomSheet = function() {
-  //   $scope.alert = '';
-  //   $mdBottomSheet.show({
-  //         templateUrl   : './app/main/bottom-sheet/bottom-sheet.html',
-  //         controller: 'BottomSheetController',
-  //         parent        : angular.element(document.getElementById('content')),
-  //         clickOutsideToClose: true   
-  //   }).then(function(){
-  //     console.log('yes!');
-  //   });
-  // };
+  $scope.demo = {
+        isOpen: false,
+        count: 0,
+        selectedDirection: 'left'
+      };
 
-  $scope.alert = '';
+  // BottomSheet
+  // TODO: Refactor so that the bottomsheet is an independent html
   var listTemplate = '<md-bottom-sheet class="md-list md-has-header"><md-subheader><md-card-header>\
-      <md-card-avatar><img class="md-user-avatar" src="../../assets/images/bMike_profile.png"/></md-card-avatar>\
+      <md-card-avatar><img class="md-user-avatar" src="../../assets/images/artist_profiles/bMike_profile.png"/></md-card-avatar>\
       <md-card-header-text><span class="md-title">Brandan Odums</span><span class="md-subhead">Graffiti</span>\
-      </md-card-header-text></md-card-header></md-subheader><md-list><p>{{story}}</p></md-list></md-bottom-sheet>';
+      </md-card-header-text></md-card-header></md-subheader><md-list><p>Brandan “Bmike” Odums is a highly sought after visual artist and filmmaker who uses these chosen mediums to tell stories and make statements that transform the minds of viewers as well as the spaces in which his work appears.</p></md-list></md-bottom-sheet>';
 
+// TODO: Refactor so that the bottomsheet opens on each independent card
   $scope.openBottomSheet = function($event) {
     $scope.alert = '';
     $mdBottomSheet.show({
       template: listTemplate,
-      controller: 'ListBottomSheetCtrl',
+      controller: 'MainController',
       parent        : angular.element(document.getElementById('content')),
       targetEvent: $event
     }).then(function(clickedItem) {
       $scope.alert = clickedItem.name + ' clicked!';
     });
   };
+  // BottomSheet End
 
+  $scope.featured = [{
+    name: 'Brandan Odums',
+    medium: 'Visual Art',
+    submedium: 'Graffiti',
+    story: "Brandan “Bmike” Odums is a highly sought after visual artist and filmmaker who uses these chosen mediums to tell stories and make statements that transform the minds of viewers as well as the spaces in which his work appears.",
+    profile: 'bMike_profile.png',
+    cover: 'bMike_cover'
+  }, {
+    name: 'Mwende Katwiwa',
+    medium: 'Performance Art',
+    submedium: 'Spoken Word',
+    story: "Mwende Katwiwa is a 24-year-old Black, Kenyan, Immigrant, Queer, Womyn poet in New Orleans, LA. Ranked 3rd at the 2015 Individual World Poetry Slam, FreeQuency is an Anti-Racist and Reproductive Justice organizer who has spent most of her life living and writing at the intersection of arts, education and activism. In New Orleans, she organizes & advocates with BYP100-NOLA and Women With A Vision, does youth work & poetry with the New Orleans Youth Open Mic and Team Slam New Orleans (Team SNO) and is an African Culture/Fashion Blogger with Noirlinians. View her work at www.FreeQuencySpeaks.com & www.Noirlinians.com.",
+    profile: 'mwende_profile.png',
+    cover: 'mwende_cover'
+  }];
 }])
 
-// app.controller('BottomSheetController', function($scope, $mdBottomSheet) {
-//   $scope.test = 'Hi'
-//   $scope.listItemClick = function($index) {
-//     var clickedItem = $scope.items[$index];
-//     $mdBottomSheet.hide(clickedItem);
-//   };
-// })
-
+// Bottom Sheet Controller
 app.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet) {
   $scope.story="Brandan “Bmike” Odums is a highly sought after visual artist and filmmaker who uses these chosen mediums to tell stories and make statements that transform the minds of viewers as well as the spaces in which his work appears."
 })

@@ -56,7 +56,10 @@ app.controller('NavbarController', ['$scope', '$mdSidenav', 'Auth',
   $scope.menu = [{
     'title': 'Test',
     'state': 'test'
-  }, 
+  }, {
+    'title': 'Artist Profile',
+    'state': 'artist'
+  }
   ];
 
 }]);

@@ -28,6 +28,7 @@ Hero Image CSS*/
   display: flex;
 }
 
+
 .description {
   background-color: black;
   flex-wrap: wrap;
@@ -97,6 +98,35 @@ Hero Image CSS*/
   padding:105px;
   transition: all 100ms ease-out 30ms;
 }
+
+/*Artist Card Profile Circles*/
+img.large.md-user-avatar{
+  width:58px;
+  margin-top: -15px;
+  margin-left: -10px;
+}
+
+/*Small Card (Cover photo + Profile) Styling*/
+/*Title*/
+span.md-title.ng-binding.small_card {
+    margin-left: 20px;
+    font-size: 16px;
+}
+/*Subtitle*/
+span.md-subhead.small_card {
+    margin-left: 20px;
+}
+/*Position of Fab Toolbar */
+md-fab-toolbar.ng-isolate-scope.md-animations-ready.md-fab-toolbar.md-left {
+  display: block;
+    z-index: inherit;
+    margin-top: -35px;
+}
+
+/*Height of photograph*/
+/*img.md-card-image {
+    max-height: 247px;
+}*/
 
 
 
