@@ -1,16 +1,12 @@
 'use strict';
-(function(){
 
-class SignupArtistComponent {
-  constructor() {
-    this.message = 'Hello';
+class SignupArtistController {
+  constructor(Auth) {
+    this.errors = {};
+    this.Auth = Auth;
   }
+
 }
 
 angular.module('mvpApp')
-  .component('signupArtist', {
-    templateUrl: 'app/account/signupArtist/signupArtist.html',
-    controller: SignupArtistComponent
-  });
-
-})();
+  .controller('SignupArtistController', SignupArtistController);

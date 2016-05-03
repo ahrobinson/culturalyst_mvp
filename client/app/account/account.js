@@ -33,7 +33,38 @@ angular.module('mvpApp')
         controller: 'SettingsController',
         controllerAs: 'vm',
         authenticate: true
-      });
+      })
+      .state('signupArtist', {
+        url: '/signupArtist',
+        templateUrl: 'app/account/signupArtist/signupArtist.html',
+        controller: 'SignupArtistController',
+        controllerAs: 'vm',
+        authenticate: true
+      })
+      // .state('signupArtist.tabs', {
+      //   templateUrl: 'app/account/signupArtist/signupArtist.tabs.html'
+      // })
+      .state('signupArtist_1', {
+        url: '/signupArtist_1',
+        templateUrl: 'app/account/signupArtist/signupArtist.1.html',
+        controller: 'SignupArtistController',
+        controllerAs: 'vm',
+        authenticate: true
+      })
+      .state('signupArtist_2', {
+        url: '/signupArtist_2',
+        templateUrl: 'app/account/signupArtist/signupArtist.2.html',
+        controller: 'SignupArtistController',
+        controllerAs: 'vm',
+        authenticate: true
+      })
+      .state('signupArtist_3', {
+        url: '/signupArtist_3',
+        templateUrl: 'app/account/signupArtist/signupArtist.3.html',
+        controller: 'SignupArtistController',
+        controllerAs: 'vm',
+        authenticate: true
+      })
   })
   .run(function($rootScope) {
     $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current) {

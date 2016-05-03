@@ -55,6 +55,10 @@ app.controller('NavbarController', ['$scope', '$mdSidenav', 'Auth',
     return Auth.isArtist();
   }
 
+  $scope.go = function($state){
+    console.log('fuck you');
+  }
+
   $scope.menu = [{
     'title': 'Test',
     'state': 'test'
