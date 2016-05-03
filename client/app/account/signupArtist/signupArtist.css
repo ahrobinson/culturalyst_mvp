@@ -1,0 +1,28 @@
+.signupDescription {
+	display:flex;
+	height: 300px;
+}
+
+md-content{
+	border: 1px solid #e1e1e1; 
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 5px !important;
+}
+
+
+
+.toggle-content {
+  height: 200px;
+  background: #e1e1e1;
+}
+
+.toggle-content.ng-hide-add, .toggle-content.ng-hide-remove {
+  transition: height linear 0.5s;
+}
+
+.toggle-content.ng-hide {
+  height: 0;
+}
