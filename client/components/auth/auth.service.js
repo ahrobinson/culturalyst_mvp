@@ -170,6 +170,11 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
         .apply(Auth, [].concat.apply(['admin'], arguments));
     },
 
+    isArtist() {
+      return Auth.hasRole
+        .apply(Auth, [].concat.apply(['artist'], arguments));
+    },
+
     /**
      * Get auth token
      *

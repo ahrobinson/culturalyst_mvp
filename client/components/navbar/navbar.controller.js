@@ -51,15 +51,14 @@ app.controller('NavbarController', ['$scope', '$mdSidenav', 'Auth',
     console.log('print');
   }
 
-
+  $scope.isArtist = function(){
+    return Auth.isArtist();
+  }
 
   $scope.menu = [{
     'title': 'Test',
     'state': 'test'
-  }, {
-    'title': 'Artist Profile',
-    'state': 'artist'
-  }
+  }, 
   ];
 
 }]);
