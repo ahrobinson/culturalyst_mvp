@@ -1,40 +1,88 @@
 <div class="container">
-	<div id="basics md-inline-form" layout="column" ng-cloak>
-		<h1>Basic Information</h1>
-
-		<md-toolbar class="md-accent">
-	    <div class="md-toolbar-tools">
-	      <h2 class="md-flex">The Basics</h2>
-	    </div>
-	  </md-toolbar>
-	  <md-content layout-gt-sm="row" layout-padding>
-	      <md-input-container>
-	        <label>First Name</label>
-	        <input ng-model="currentUser.name">
-	      </md-input-container>
-	      <md-input-container>
-	        <label>Last Name</label>
-	        <input ng-model="currentUser.name_last" type="email">
-	      </md-input-container>
-	      <br>
-	  </md-content>
-	  <md-content layout-gt-sm="row" layout-padding>
-      <md-input-container class="md-block" flex-gt-sm>
-        <label>Neighborhood</label>
-          <md-select ng-model="currentUser.neighborhood">
-            <md-option ng-repeat="neighborhood in neighborhoods" value="{{neighborhoods.abbrev}}">
-              {{state.abbrev}}
-            </md-option>
-          </md-select>
-      </md-input-container>
-
-	  </md-content>
-
-	</div>
-
-
-
 </div>
+
+<div id="steps">
+	<div class="step">
+		<div class="active_step">
+		<h1>1</h1>	
+		</div>
+	</div>
+	<div class="step">
+		<h1>2</h1>
+	</div>
+	<div class="step">
+		<h1>3</h1>
+	</div>
+</div>
+
+<div id="basics" ng-cloak>
+	<md-toolbar class="toolbar_basics">
+	  <div class="md-toolbar-tools">
+	   	<h2 class="md-flex">The Basics</h2>
+	  </div>
+	</md-toolbar>
+	  
+	<md-content layout-gt-sm="row" layout-padding>
+	  <md-input-container flex="50" class="md-block">
+	    <label>First Name</label>
+	    <input ng-model="currentUser.name">
+	  </md-input-container>
+	  <md-input-container flex="50" class="md-block">
+	    <label>Last Name</label>
+	    <input ng-model="currentUser.name_last" type="text">
+	  </md-input-container>
+
+	  <md-input-container class="md-block">
+	    <label>Birthday (MM/DD/YYYY)</label>
+	    <input ng-model="currentUser.dob" type="dob">
+	  </md-input-container><br>
+ 
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Neighborhood</label>
+        <md-select ng-model="currentUser.neighborhood">
+          <md-option ng-repeat="neighborhood in neighborhoods" value="{{neighborhood.abbrev}}">{{neighborhood.abbrev}}
+          </md-option>
+        </md-select>
+    </md-input-container>
+	 </md-content>
+</div>
+
+<div id="theArt" ng-cloak>
+	<md-toolbar class="toolbar_basics">
+	  <div class="md-toolbar-tools">
+	   	<h2 class="md-flex">The Art</h2>
+	  </div>
+	</md-toolbar>
+	  
+	<md-content layout-gt-sm="row" layout-padding>
+	  <md-input-container flex="50" class="md-block">
+	    <label>First Name</label>
+	    <input ng-model="currentUser.name">
+	  </md-input-container>
+	  <md-input-container flex="50" class="md-block">
+	    <label>Last Name</label>
+	    <input ng-model="currentUser.name_last" type="text">
+	  </md-input-container>
+
+	  <md-input-container class="md-block">
+	    <label>Birthday (MM/DD/YYYY)</label>
+	    <input ng-model="currentUser.dob" type="dob">
+	  </md-input-container><br>
+ 
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Neighborhood</label>
+        <md-select ng-model="currentUser.neighborhood">
+          <md-option ng-repeat="neighborhood in neighborhoods" value="{{neighborhood.abbrev}}">{{neighborhood.abbrev}}
+          </md-option>
+        </md-select>
+    </md-input-container>
+	 </md-content>
+</div>
+
+
+
+
+
 
 
 <md-button id="Save" aria-label="FAB" ui-sref="signupArtist_2">Save & Continue</md-button>

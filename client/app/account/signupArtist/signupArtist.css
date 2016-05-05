@@ -6,7 +6,7 @@
 }
 
 .container #introduction{
-	padding: 35px;
+	padding: 20px;
 }
 .container #introduction h1{
 	text-align: center;
@@ -37,19 +37,57 @@
 }
 
 /*Basics Page*/
-.container #basics{
-	padding: 35px;
+.active_step {
+	width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-bottom: 60px solid #FFEBEE;
+	margin-top: 10px;
 	display: flex;
-}
-
-.container #basics h1{
-	text-align: center;
-}
-
-.container #basics md-content{
-	display: flex;
+	flex-direction:column;
 	justify-content: center;
 }
+
+.active_step h1{
+  margin-top: 92px;
+  margin-left: -9px;
+}
+/*Centering Toolbar*/
+.md-toolbar-tools {
+    /* align-content: center; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+/*
+Coloring Toolbar*/
+md-toolbar.toolbar_basics {
+    background-color: #FFEBEE;
+}
+#basics{
+	padding: 20px;
+}
+
+#basics md-content{
+	border: 2px solid #ECEFF1;
+}
+
+#theArt{
+	padding: 20px;
+}
+
+#theArt md-content{
+	border: 2px solid #ECEFF1;
+}
+
+md-toolbar.toolbar_theArt {
+    background-color: green;
+}
+
+
+
+
 
 
 /*TODO: Change hue of helper text in input fields*/
