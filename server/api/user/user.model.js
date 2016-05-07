@@ -17,6 +17,8 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true
     },
     name: DataTypes.STRING,
+    name_last: DataTypes.STRING,
+    dob: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
       unique: {
@@ -39,8 +41,22 @@ module.exports = function(sequelize, DataTypes) {
     provider: DataTypes.STRING,
     salt: DataTypes.STRING,
     facebook: DataTypes.JSON,
-    github: DataTypes.JSON
-
+    github: DataTypes.JSON,
+    neighborhood: DataTypes.STRING,
+    hometown: DataTypes.STRING,
+    hometown_state: DataTypes.STRING,
+    //medium & submedium will be removed after join table is created
+    medium:DataTypes.STRING,
+    submedium: DataTypes.STRING,
+    experience: DataTypes.STRING,
+    website: DataTypes.STRING,
+    facebook: DataTypes.STRING,
+    instagram: DataTypes.STRING,
+    twitter: DataTypes.STRING,
+    etsy: DataTypes.STRING,
+    soundcloud:DataTypes.STRING,
+    behance:DataTypes.STRING,
+    bandcamp: DataTypes.STRING,
   }, {
 
     /**

@@ -8,12 +8,23 @@
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
                                             'has-error': form.name.$invalid && vm.submitted }">
-          <label>Name</label>
+          <label> First Name</label>
 
           <input type="text" name="name" class="form-control" ng-model="vm.user.name"
                  required/>
           <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
-            A name is required
+            A first name is required.
+          </p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
+                                            'has-error': form.name.$invalid && vm.submitted }">
+          <label> Last Name</label>
+
+          <input type="text" name="name_last" class="form-control" ng-model="vm.user.name_last"
+                 required/>
+          <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
+            A last name is required.
           </p>
         </div>
 

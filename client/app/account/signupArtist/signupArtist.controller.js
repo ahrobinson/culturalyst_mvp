@@ -8,6 +8,7 @@ class SignupArtistController {
 
     //Getting CurrentUser
     this.$scope.currentUser = this.Auth.getCurrentUser();
+    console.log(this.$scope.currentUser);
   	// TODO:Add name_last to Signup
   	// TODO: Add name_artist to User
   	

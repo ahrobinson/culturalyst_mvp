@@ -129,9 +129,24 @@ export function me(req, res, next) {
     attributes: [
       '_id',
       'name',
+      'name_last',
       'email',
       'role',
-      'provider'
+      'provider',
+      'neighborhood',
+      'hometown',
+      'hometown_state',
+      'medium',
+      'submedium',
+      'experience',
+      'website',
+      'facebook',
+      'instagram',
+      'twitter',
+      'etsy',
+      'soundcloud',
+      'behance',
+      'bandcamp'
     ]
   })
     .then(user => { // don't ever give out the password or salt
