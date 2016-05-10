@@ -54,12 +54,14 @@
           </md-option>
         </md-select>
     </md-input-container>
+  <!--   TODO: Green circle around button after it is pressed + $mdToast (likely using ngAnimate)-->
+	 <md-button id="saveBasics" aria-label="FAB" ng-click = "vm.registerBasics()">
+	 	<md-icon md-svg-icon="enter_black"></md-icon>
+	 </md-button>
 	 </md-content>
-	 <md-button id="saveBasics" aria-label="FAB" ng-click = "vm.registerBasics()">Save & Continue</md-button>
-	 <p>{{vm.message}}</p>
 </div>
 
-<!-- <div id="theArt" ng-cloak>
+<div id="theArt" ng-cloak>
 	<md-toolbar class="toolbar_theArt">
 	  <div class="md-toolbar-tools">
 	   	<h2 class="md-flex">The Art</h2>
@@ -67,29 +69,88 @@
 	</md-toolbar>
 	  
 	<md-content layout-gt-sm="row" layout-padding>
-	  <md-input-container flex="50" class="md-block">
-	    <label>First Name</label>
-	    <input ng-model="currentUser.name">
-	  </md-input-container>
-	  <md-input-container flex="50" class="md-block">
-	    <label>Last Name</label>
-	    <input ng-model="currentUser.name_last" type="text">
-	  </md-input-container>
-
-	  <md-input-container class="md-block">
-	    <label>Birthday (MM/DD/YYYY)</label>
-	    <input ng-model="currentUser.dob" type="dob">
-	  </md-input-container><br>
- 
     <md-input-container class="md-block" flex-gt-sm>
-      <label>Neighborhood</label>
-        <md-select ng-model="currentUser.neighborhood">
-          <md-option ng-repeat="neighborhood in neighborhoods" value="{{neighborhood.abbrev}}">{{neighborhood.abbrev}}
+      <label>Medium of Art</label>
+        <md-select ng-model="medium" ng-change="vm.loadGenres(medium)" ng-selected="medium">
+          <md-option ng-repeat="medium in mediaList">{{medium.name}}
           </md-option>
         </md-select>
     </md-input-container>
+
+	  <md-input-container class="md-block" flex-gt-sm>
+	    <label>Genre of Art</label>
+	    <md-select ng-model="genre">
+          <md-option ng-repeat="genre in genreList">{{genre}}
+          </md-option>
+        </md-select>
+	  </md-input-container>
+
+	  <md-input-container class="md-block">
+	    <label>Experience</label>
+	    <input ng-model="experience" type="dob">
+	  </md-input-container><br>
+ 	
+ 	<md-button id="saveArt" aria-label="FAB" ng-click = "vm.registerArt()">
+	 	<md-icon md-svg-icon="enter_black"></md-icon>
+	 </md-button>
+
 	 </md-content>
-</div> -->
+</div>
+
+<div id="properties" ng-cloak>
+	<md-toolbar class="toolbar_properties">
+	  <div class="md-toolbar-tools">
+	   	<h2 class="md-flex">Your Properties</h2>
+	  </div>
+	</md-toolbar>
+	  
+	<md-content layout-gt-sm="row" layout-padding>
+	  <md-input-container flex="50" class="md-block">
+	    <label>Website</label>
+	    <input ng-model="website">
+	  </md-input-container>
+
+	  <md-input-container flex="50" class="md-block">
+	    <label>Instagram</label>
+	    <input ng-model="instagram" type="text">
+	  </md-input-container>
+
+	  <md-input-container class="md-block">
+	    <label>Twitter</label>
+	    <input ng-model="twitter" type="text">
+	  </md-input-container><br>
+
+	  <md-input-container class="md-block">
+	    <label>Store</label>
+	    <input ng-model="store" type="text">
+	  </md-input-container><br>
+ 	
+ 		<md-input-container class="md-block">
+	    <label>Soundcloud</label>
+	    <input ng-model="soundcloud" type="text">
+	  </md-input-container><br>
+
+	  <md-input-container class="md-block">
+	    <label>Behance</label>
+	    <input ng-model="behance" type="text">
+	  </md-input-container><br>
+
+	  <md-input-container class="md-block">
+	    <label>Bandcamp</label>
+	    <input ng-model="bandcamp" type="text">
+	  </md-input-container><br>
+
+	  <md-input-container class="md-block">
+	    <label>Spotify</label>
+	    <input ng-model="spotify" type="text">
+	  </md-input-container><br>
+
+  <!--   TODO: Green circle around button after it is pressed + $mdToast (likely using ngAnimate)-->
+	 <md-button id="saveProperties" aria-label="FAB" ng-click = "vm.registerProperties()">
+	 	<md-icon md-svg-icon="enter_black"></md-icon>
+	 </md-button>
+	 </md-content>
+</div>
 
 
 <md-button id="Save" aria-label="FAB" ui-sref="signupArtist_2">Save & Continue</md-button>

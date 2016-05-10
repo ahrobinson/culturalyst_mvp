@@ -47,16 +47,17 @@ module.exports = function(sequelize, DataTypes) {
     hometown_state: DataTypes.STRING,
     //medium & submedium will be removed after join table is created
     medium:DataTypes.STRING,
-    submedium: DataTypes.STRING,
+    genre: DataTypes.STRING,
     experience: DataTypes.STRING,
     website: DataTypes.STRING,
     facebook: DataTypes.STRING,
     instagram: DataTypes.STRING,
     twitter: DataTypes.STRING,
-    etsy: DataTypes.STRING,
     soundcloud:DataTypes.STRING,
     behance:DataTypes.STRING,
     bandcamp: DataTypes.STRING,
+    store: DataTypes.STRING,
+    spotify: DataTypes.STRING
   }, {
 
     /**

@@ -15,5 +15,8 @@ router.post('/', controller.create);
 
 //Artist Routes (SignupArtistController)
 router.put('/:id/updateArtistBasics', auth.isAuthenticated(), controller.updateArtistBasics);
+router.put('/:id/updateArtistArt', auth.isAuthenticated(), controller.updateArtistArt);
+router.put('/:id/updateArtistProperties', auth.isAuthenticated(), controller.updateArtistProperties);
+
 
 module.exports = router;

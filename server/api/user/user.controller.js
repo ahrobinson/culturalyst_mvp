@@ -134,19 +134,21 @@ export function me(req, res, next) {
       'role',
       'provider',
       'neighborhood',
+      'dob',
       'hometown',
       'hometown_state',
       'medium',
-      'submedium',
+      'genre',
       'experience',
       'website',
       'facebook',
       'instagram',
       'twitter',
-      'etsy',
       'soundcloud',
       'behance',
-      'bandcamp'
+      'bandcamp',
+      'store',
+      'spotify'
     ]
   })
     .then(user => { // don't ever give out the password or salt
@@ -187,6 +189,61 @@ export function updateArtistBasics (req, res, next) {
       user.neighborhood = neighborhood;
       user.hometown = hometown;
       user.hometown_state = hometown_state;
+      user.save()
+        .then(function(){
+          res.status(204).end();
+        })
+        .catch(validationError(res));
+  });
+};
+
+export function updateArtistArt (req, res, next) {
+  let userId = req.user._id;
+  let medium = req.body.medium;
+  let genre = req.body.genre;
+  let experience = req.body.experience;
+
+  return User.find({
+    where: {
+      _id: userId
+    }
+  }).then(function(user){
+      user.medium = medium;
+      user.genre = genre;
+      user.experience = experience;
+      user.save()
+        .then(function(){
+          res.status(204).end();
+        })
+        .catch(validationError(res));
+  });
+};
+
+export function updateArtistProperties (req, res, next) {
+  let userId = req.user._id;
+  let website = req.body.website;
+  let instagram = req.body.instagram;
+  let twitter = req.body.twitter;
+  let store = req.body.store;
+  let soundcloud = req.body.soundcloud;
+  let behance = req.body.behance;
+  let bandcamp = req.body.bandcamp;
+  let spotify = req.body.spotify;
+
+
+  return User.find({
+    where: {
+      _id: userId
+    }
+  }).then(function(user){
+      user.website = website;
+      user.instagram = instagram;
+      user.twitter = twitter;
+      user.store = store;
+      user.soundcloud = soundcloud;
+      user.behance = behance;
+      user.bandcamp = bandcamp;
+      user.spotify = spotify;
       user.save()
         .then(function(){
           res.status(204).end();

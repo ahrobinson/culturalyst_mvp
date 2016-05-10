@@ -121,7 +121,7 @@ input.md-input:focus{ color: #E91E63; }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /*Increases size of hero photo on big screens*/
+  /*THIS WAS DELETED: Increases size of hero photo on big screens*/
 
   /*Increases size of logo on big screens*/
   #nav_logo img {

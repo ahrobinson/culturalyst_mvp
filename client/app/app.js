@@ -11,7 +11,7 @@ angular.module('mvpApp', [
   'ui.router',
   'validation.match',
   'ngAnimate',
-  'ngMaterial'
+  'ngMaterial',
 ])
   .config(function($urlRouterProvider, $locationProvider, $mdThemingProvider, $mdIconProvider) {
     $urlRouterProvider

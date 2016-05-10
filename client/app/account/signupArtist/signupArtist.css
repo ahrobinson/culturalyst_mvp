@@ -63,14 +63,15 @@
 /*
 Coloring Toolbar*/
 md-toolbar.toolbar_basics {
-    background-color: #FFEBEE;
+    /*background-color: #FFEBEE;*/
+    border: 2px solid black;
 }
 #basics{
 	padding: 20px;
 }
 
 #basics md-content{
-	border: 2px solid #ECEFF1;
+	border: 3px solid #FFEBEE;
 }
 
 #theArt{
@@ -78,11 +79,25 @@ md-toolbar.toolbar_basics {
 }
 
 #theArt md-content{
-	border: 2px solid #ECEFF1;
+	/*border: 2px solid #ECEFF1;*/
+	border: 3px solid #FFEBEE;
 }
 
 md-toolbar.toolbar_theArt {
-    background-color: green;
+    border: 2px solid black;
+}
+
+#properties {
+	padding: 20px;
+}
+
+#properties md-content{
+	/*border: 2px solid #ECEFF1;*/
+	border: 3px solid #FFEBEE;
+}
+
+md-toolbar.toolbar_properties {
+    border: 2px solid black;
 }
 
 
