@@ -158,6 +158,43 @@ export function me(req, res, next) {
     .catch(err => next(err));
 }
 
+
+/**
+ * Custom Functions
+ */
+
+/**
+ * Artist Signup
+      Page 1
+        Basics
+        Art
+        Places
+ */
+
+export function updateArtistBasics (req, res, next) {
+  let userId = req.user._id;
+  let dob = req.body.dob;
+  let neighborhood = req.body.neighborhood;
+  let hometown = req.body.hometown;
+  let hometown_state = req.body.hometown_state; 
+
+  return User.find({
+    where: {
+      _id: userId
+    }
+  }).then(function(user){
+      user.dob = dob;
+      user.neighborhood = neighborhood;
+      user.hometown = hometown;
+      user.hometown_state = hometown_state;
+      user.save()
+        .then(function(){
+          res.status(204).end();
+        })
+        .catch(validationError(res));
+  });
+};
+
 /**
  * Authentication callback
  */

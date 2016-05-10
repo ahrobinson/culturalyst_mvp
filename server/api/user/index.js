@@ -13,4 +13,7 @@ router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 
+//Artist Routes (SignupArtistController)
+router.put('/:id/updateArtistBasics', auth.isAuthenticated(), controller.updateArtistBasics);
+
 module.exports = router;
