@@ -63,7 +63,7 @@
 /*
 Coloring Toolbar*/
 md-toolbar.toolbar_basics {
-    /*background-color: #FFEBEE;*/
+   /* background-color: #FFEBEE;*/
     border: 2px solid black;
 }
 #basics{
@@ -71,7 +71,7 @@ md-toolbar.toolbar_basics {
 }
 
 #basics md-content{
-	border: 3px solid #FFEBEE;
+	border: 2px solid #ECEFF1;
 }
 
 #theArt{
@@ -79,8 +79,8 @@ md-toolbar.toolbar_basics {
 }
 
 #theArt md-content{
-	/*border: 2px solid #ECEFF1;*/
-	border: 3px solid #FFEBEE;
+	border: 2px solid #ECEFF1;
+	
 }
 
 md-toolbar.toolbar_theArt {
@@ -92,8 +92,8 @@ md-toolbar.toolbar_theArt {
 }
 
 #properties md-content{
-	/*border: 2px solid #ECEFF1;*/
-	border: 3px solid #FFEBEE;
+	border: 2px solid #ECEFF1;
+
 }
 
 md-toolbar.toolbar_properties {
