@@ -34,9 +34,13 @@ class SignupArtistController {
     this.$scope.bandcamp = this.$scope.currentUser.bandcamp;
     this.$scope.spotify = this.$scope.currentUser.spotify;
 
-    // TODO: Reload page if user navigates to ArtistSignup, so that we fetch most up-to-date data
+    //TODO: Reload page if user navigates to ArtistSignup, so that we fetch most up-to-date data
 
+    //TODO: Only allow user to move to step 2 if all items have been filled in
 
+    //TODO: Style button to green after saving | if there is data present
+
+    //TODO: Allow Artist to have more than one medium and more than one genre per medium
 
   	//TODO: Add in New Orleans Neighborhoods
   	this.$scope.neighborhoods = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
@@ -53,16 +57,43 @@ class SignupArtistController {
   	console.log(this.$scope.selectedMedium);
   }
 
-  showToast($mdToast){
+  showBasicToast($mdToast){
   	console.log('shit worked');
   	 this.$mdToast.show(
       this.$mdToast.simple()
-        .textContent('Saved.')
+        .textContent('Basics Saved.')
         .position('left')
         .hideDelay(3000)
         .parent('#saveBasics')
     );
   }
+
+  showArtToast($mdToast){
+  	console.log('shit worked');
+  	 this.$mdToast.show(
+      this.$mdToast.simple()
+        .textContent('Art Medium & Genre Saved.')
+        .position('left')
+        .hideDelay(3000)
+        .parent('#saveArt')
+    );
+  }
+
+  showPropertiesToast($mdToast){
+  	console.log('shit worked');
+  	 this.$mdToast.show(
+      this.$mdToast.simple()
+        .textContent('Properties Saved.')
+        .position('left')
+        .hideDelay(3000)
+        .parent('#saveProperties')
+    );
+  }
+
+  changeColor(){
+
+  }
+
 
   registerBasics() {
   	let context = this;
@@ -74,7 +105,7 @@ class SignupArtistController {
   		hometown_state: context.$scope.hometown_state,
   	}).then(function(){
   		// TODO: ADD animation here
-  		context.showToast();
+  		context.showBasicToast();
   	})
   }
 
@@ -86,7 +117,7 @@ class SignupArtistController {
   		experience: context.$scope.experience,
   	}).then(function(){
   		// TODO: ADD animation here
-  		context.showToast();
+  		context.showArtToast();
   	})
   }
 
@@ -103,7 +134,7 @@ class SignupArtistController {
   		spotify:context.$scope.spotify,
   	}).then(function(){
   		// TODO: ADD animation here
-  		context.showToast();
+  		context.showPropertiesToast();
   	})
   }
 }
