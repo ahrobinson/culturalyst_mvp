@@ -99,10 +99,22 @@
 
   <md-sidenav md-component-id="left" class="md-sidenav-left">
     <md-toolbar class="md-whiteframe-z1">
-      <h3>Menu</h3>
+      <h3 ng-show="!isLoggedIn()">Menu</h3>
+      
+      <div layout="column" ng-show="isLoggedIn()">
+        <div class="profileImage"></div>
+        <div class="sideNavHeroImage"></div>
+        <div layout="column" class="md-toolbar-tools-bottom inset" layout-align="center center" style="margin-top: 58px;">
+          <md-content class="md-primary md-padding" layout-align="center center" layout="column">
+            <div>{{currentUser.name}}</div>
+          </md-content>
+        </div>
+      </div>
+      <md-divider></md-divider>
+
     </md-toolbar>
 
-    <md-list>
+    <md-list class="sideNavList">
 
       <md-list-item hide-gt-md class="hide_link">
           <md-button  ng-click="closeLeftMenu()">
@@ -121,8 +133,8 @@
           <a ui-sref="{{it.state}}"><h3>{{it.title}}</h3></a>
         </md-button>
       </md-list-item>
-      <md-divider></md-divider>
-      <md-subheader>Account</md-subheader>
+      <md-divider ng-show="isLoggedIn()"></md-divider>
+      <md-subheader ng-show="isLoggedIn()">Account</md-subheader>
 
 <!--       TODO: Make Artist profile show up only if user is logged in & is artist -->
       <md-list-item ng-show="isLoggedIn()" class="hide_link">

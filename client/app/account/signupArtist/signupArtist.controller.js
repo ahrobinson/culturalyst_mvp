@@ -10,12 +10,10 @@ class SignupArtistController {
     //Getting MediaList Service
     this.MediaList = MediaList;
     this.$scope.mediaList = this.MediaList.getMediaList();
-    console.log(this.$scope.mediaList);
 
 
     //Getting CurrentUser
     this.$scope.currentUser = this.Auth.getCurrentUser();
-    console.log(this.$scope.currentUser);
 
     //Saving information to scope to populate form after initial save
     this.$scope.hometown = this.$scope.currentUser.hometown;

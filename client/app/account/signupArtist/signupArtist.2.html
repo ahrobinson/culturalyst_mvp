@@ -19,4 +19,40 @@
 	</div>
 </div>
 
+
+
+<div id="story" class="maxFormWidth" ng-cloak>
+	<md-toolbar class="toolbar_basics">
+	  <div class="md-toolbar-tools">
+	   	<h2 class="md-flex">The Story</h2>
+	  </div>
+	  <md-button ng-click="openStory = !openStory">Instructions</md-button>
+<!-- 	  <md-button class="help" class="menu" ng-click="openBasics = !openBasics" aria-label="Help">
+          <md-icon md-svg-icon="help_black"></md-icon>
+    </md-button> -->
+	</md-toolbar>
+
+	<div class="toggle-content" ng-show="openStory">
+
+  </div>
+	
+		
+	<md-content layout-padding>
+		<md-input-container>
+		  <label>Description</label>
+		  <textarea ng-model="user.description"></textarea>
+		</md-input-container>
+
+		<p>yo yo!</p><blockquote><p>yo yo for real tho</p></blockquote>
+
+	</md-content>
+
+	 <div id="saveBasics">
+		 <md-button class="md-fab md-raised" id="saveBasicsButton" aria-label="FAB" ng-click="vm.registerBasics()">
+	      <md-icon md-svg-icon="enter_black"></md-icon>
+	   </md-button>
+	 </div>
+
+</div>
+
 <md-button id="Save" aria-label="FAB" ui-sref="signupArtist_3">Save & Continue</md-button>
