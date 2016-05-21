@@ -59,6 +59,9 @@ app.controller('NavbarController', ['$scope', '$mdSidenav', 'Auth',
     console.log('fuck you');
   }
 
+
+
+
   $scope.menu = [{
     'title': 'Test',
     'state': 'test'

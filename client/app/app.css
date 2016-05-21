@@ -114,16 +114,27 @@ input.md-input:focus{ color: #E91E63; }
 }
 
 
-/* Navbar Styling End
+/* Navbar Styling End */
+
+Styling textAngular
+
+.ta-editor {
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+    margin:20px 0;
+}
 
 
-
-.browserupgrade {
+/*.browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
+*/
 
 
 /*Responsive: Iphone6*/

@@ -6,14 +6,15 @@ class SignupArtistController {
     this.Auth = Auth;
     this.$scope = $scope;
     this.$http = $http;
-    this.$mdToast = $mdToast;
-    //Getting MediaList Service
     this.MediaList = MediaList;
     this.$scope.mediaList = this.MediaList.getMediaList();
 
 
     //Getting CurrentUser
+    this.$mdToast = $mdToast;
+    //Getting MediaList Service
     this.$scope.currentUser = this.Auth.getCurrentUser();
+    console.log(this.$scope.currentUser);
 
     //Saving information to scope to populate form after initial save
     this.$scope.hometown = this.$scope.currentUser.hometown;
@@ -31,6 +32,7 @@ class SignupArtistController {
     this.$scope.behance = this.$scope.currentUser.behance;
     this.$scope.bandcamp = this.$scope.currentUser.bandcamp;
     this.$scope.spotify = this.$scope.currentUser.spotify;
+    this.$scope.story = this.$scope.currentUser.story;
 
     //TODO: Reload page if user navigates to ArtistSignup, so that we fetch most up-to-date data
 
@@ -88,6 +90,17 @@ class SignupArtistController {
     );
   }
 
+  showStoryToast($mdToast){
+  	console.log('shit worked');
+  	 this.$mdToast.show(
+      this.$mdToast.simple()
+        .textContent('Your story is saved.')
+        .position('left')
+        .hideDelay(3000)
+        .parent('#saveStory')
+    );
+  }
+
   changeColor(){
 
   }
@@ -135,6 +148,17 @@ class SignupArtistController {
   		context.showPropertiesToast();
   	})
   }
+
+  registerStory(){
+  	let context = this;
+  	this.$http.put('/api/users/' + this.$scope.currentUser._id + '/updateArtistStory', {
+  		story: context.$scope.story
+  	}).then(function(){
+  		// TODO: ADD animation here
+  		context.showStoryToast();
+  	})
+  }
+
 }
 
 

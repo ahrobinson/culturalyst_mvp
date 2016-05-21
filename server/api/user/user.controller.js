@@ -148,7 +148,8 @@ export function me(req, res, next) {
       'behance',
       'bandcamp',
       'store',
-      'spotify'
+      'spotify',
+      'story'
     ]
   })
     .then(user => { // don't ever give out the password or salt
@@ -244,6 +245,25 @@ export function updateArtistProperties (req, res, next) {
       user.behance = behance;
       user.bandcamp = bandcamp;
       user.spotify = spotify;
+      user.save()
+        .then(function(){
+          res.status(204).end();
+        })
+        .catch(validationError(res));
+  });
+};
+
+export function updateArtistStory (req, res, next) {
+  let userId = req.user._id;
+  let story = req.body.story
+
+
+  return User.find({
+    where: {
+      _id: userId
+    }
+  }).then(function(user){
+      user.story = story;
       user.save()
         .then(function(){
           res.status(204).end();

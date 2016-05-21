@@ -188,6 +188,31 @@ button#savePropertiesButton {
 	border: 2px solid #ECEFF1;
 
 }
+
+
+md-toolbar.toolbar_story {
+    border: 2px solid black;
+}
+
+.toggle-content_story {
+  height: 200px;
+  background: #E3F2FD;
+  border: 2px solid #ECEFF1;
+}
+
+#saveStory{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+  margin-top: -33px;
+}
+
+button#saveStoryButton {
+	background-color: #E3F2FD;
+}
+
+
 /*Responsive: Iphone6*/
 /*TODO: Add other device screen sizes*/
 @media only screen 

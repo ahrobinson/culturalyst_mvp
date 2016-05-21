@@ -22,34 +22,31 @@
 
 
 <div id="story" class="maxFormWidth" ng-cloak>
-	<md-toolbar class="toolbar_basics">
+	<md-toolbar class="toolbar_story">
 	  <div class="md-toolbar-tools">
 	   	<h2 class="md-flex">The Story</h2>
 	  </div>
 	  <md-button ng-click="openStory = !openStory">Instructions</md-button>
-<!-- 	  <md-button class="help" class="menu" ng-click="openBasics = !openBasics" aria-label="Help">
-          <md-icon md-svg-icon="help_black"></md-icon>
-    </md-button> -->
+    </md-button>
 	</md-toolbar>
 
-	<div class="toggle-content" ng-show="openStory">
-
+	<div class="toggle-content_story" ng-show="openStory">
+	Insert Instructions
   </div>
 	
 		
 	<md-content layout-padding>
-		<md-input-container>
-		  <label>Description</label>
-		  <textarea ng-model="user.description"></textarea>
-		</md-input-container>
-
-		<p>yo yo!</p><blockquote><p>yo yo for real tho</p></blockquote>
+		<md-input-container class="md-block">
+      <label>Tell Your Story.</label>
+      <textarea ng-model="story" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
 
 	</md-content>
 
-	 <div id="saveBasics">
-		 <md-button class="md-fab md-raised" id="saveBasicsButton" aria-label="FAB" ng-click="vm.registerBasics()">
-	      <md-icon md-svg-icon="enter_black"></md-icon>
+	 <div id="saveStory">
+		 <md-button class="md-fab md-raised" id="saveStoryButton" aria-label="FAB" ng-click="vm.registerStory()">
+<!-- 	      <md-icon md-svg-icon="enter_black"></md-icon> -->
+	      Save
 	   </md-button>
 	 </div>
 

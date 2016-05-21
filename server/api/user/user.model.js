@@ -57,7 +57,8 @@ module.exports = function(sequelize, DataTypes) {
     behance:DataTypes.STRING,
     bandcamp: DataTypes.STRING,
     store: DataTypes.STRING,
-    spotify: DataTypes.STRING
+    spotify: DataTypes.STRING,
+    story: DataTypes.STRING
   }, {
 
     /**
