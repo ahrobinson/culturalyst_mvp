@@ -1,1 +1,107 @@
-<div>This is the artist view.</div>
+<div class="hero">
+  <div class="picture-overlay">
+  </div>
+</div>
+<md-toolbar id="artist_toolbar">
+	 <div class="md-toolbar-tools" id="artist_toolbar_tools">
+	 	<!-- <img class="bracket_big" src="../../assets/images/left_bracket.png"> -->
+		<img class="profileImg" src="../../assets/images/profile.png"/>
+		<!-- <img class="bracket_big" src="../../assets/images/right_bracket.png"> -->
+	 </div>
+	 <div class="md-display-1 artist_details">
+		 <h4>{{currentUser.name}} {{currentUser.name_last}}</h4>
+			<p>{{message}}</p>
+	  </div>
+	  <div class="artist_action_buttons">
+		   <md-fab-speed-dial md-open="isOpen" md-direction="left"
+                         ng-class="md-fling">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-accent">
+            <md-icon md-svg-icon="menu"></md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="Instagram" class="md-fab md-raised md-mini">
+            <md-icon md-svg-icon="instagram"></md-icon>
+          </md-button>
+          <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+            <md-icon md-svg-icon="facebook"></md-icon>
+          </md-button>
+          <md-button aria-label="Soundcloud" class="md-fab md-raised md-mini">
+            <md-icon md-svg-icon="soundcloud"></md-icon>
+          </md-button>
+        </md-fab-actions>
+      </md-fab-speed-dial>
+	  </div>
+</md-toolbar>
+
+<div class="profile_content">
+	<div ng-cloak class="tabs">
+	  <md-content>
+	  	<md-toolbar class="toolbar_artist">
+				<div class="md-toolbar-tools">
+				  <h2 class="md-flex">The Art</h2>
+				</div>
+			</md-toolbar>
+	    <md-tabs md-dynamic-height md-border-bottom>
+	      <md-tab label="New Stuff">
+	        <md-content class="md-padding">
+	          <h1 class="md-display-2">Work</h1>
+	          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+	        </md-content>
+	      </md-tab>
+	      <md-tab label="Catalog">
+	        <md-content class="md-padding">
+	          <h1 class="md-display-2">Tab Two</h1>
+	          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+	          <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+	        </md-content>
+	      </md-tab>
+	      <md-tab label="Gallery">
+	        <md-content class="md-padding">
+	          <h1 class="md-display-2">Tab Three</h1>
+	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+	        </md-content>
+	      </md-tab>
+	    </md-tabs>
+	  </md-content>
+	</div>
+</div>
+
+<div class="profile_content">
+	<div ng-cloak class="tabs">
+	  <md-content>
+	  	<md-toolbar class="toolbar_artist">
+				<div class="md-toolbar-tools">
+				  <h2 class="md-flex">The Artist</h2>
+				</div>
+			</md-toolbar>
+	    <md-tabs md-dynamic-height md-border-bottom>
+	      <md-tab label="New Stuff">
+	        <md-content class="md-padding">
+	          <h1 class="md-display-2">Biography</h1>
+	          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+	        </md-content>
+	      </md-tab>
+	      <md-tab label="Catalog">
+	        <md-content class="md-padding">
+	          <h1 class="md-display-2">Tab Two</h1>
+	          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+	          <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+	        </md-content>
+	      </md-tab>
+	      <md-tab label="Gallery">
+	        <md-content class="md-padding">
+	          <h1 class="md-display-2">Tab Three</h1>
+	          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+	        </md-content>
+	      </md-tab>
+	    </md-tabs>
+	  </md-content>
+
+	  
+	</div>
+
+

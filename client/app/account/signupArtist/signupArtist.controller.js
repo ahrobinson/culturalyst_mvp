@@ -159,6 +159,17 @@ class SignupArtistController {
   	})
   }
 
+  launchProfile(){
+    console.log('launch profile')
+    let context = this;
+    this.$http.put('/api/users/' + this.$scope.currentUser._id + '/launchArtistProfile', {
+      profile_pic: context.$scope.profile_pic,
+      cover_pic: context.$scope.cover_pic,
+      background_pic: context.$scope.background_pic,
+    }).then(function(){
+      // TODO: ADD animation here
+    })
+  }
 }
 
 

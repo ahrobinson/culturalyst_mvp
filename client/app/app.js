@@ -34,6 +34,15 @@ angular.module('mvpApp', [
       .icon("thumb_black", "./assets/svg/thumb_black.svg", 24)
       .icon("add_black", "./assets/svg/add_black.svg", 24)
       .icon("help_black", "./assets/svg/help_black.svg", 24)
+      .icon("linkedin", "./assets/svg/linkedin.svg", 24)
+      .icon("etsy", "./assets/svg/etsy.svg", 24)
+      .icon("spotify", "./assets/svg/spotify.svg", 24)
+      .icon("twitter", "./assets/svg/twitter.svg", 24)
+      .icon("behance", "./assets/svg/behance.svg", 24)
+      .icon("facebook", "./assets/svg/facebook.svg", 24)
+      .icon("instagram", "./assets/svg/instagram.svg", 24)
+      .icon("soundcloud", "./assets/svg/soundcloud.svg", 24)
+
 
     var customPrimary = {
         '50': '#ffffff',
@@ -59,9 +68,9 @@ angular.module('mvpApp', [
     $mdThemingProvider.theme('default')
       .primaryPalette('customPrimary', {
         'default': '400',
-        'hue-1': '500'
+        'hue-1': '900'
       })
-      .accentPalette('pink', {
+      .accentPalette('indigo', {
         'default': '500'
       })
   });

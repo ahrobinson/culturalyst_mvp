@@ -16,7 +16,7 @@ export function setup(User, config) {
 
   function(accessToken, refreshToken, profile, done) {
     console.log(profile);
-    User.find({where:{'facebook.id': profile.id}})
+    User.find({where:{'facebook': profile.id}})
       .then(user => {
         if (user) {
           return done(null, user);
@@ -26,7 +26,8 @@ export function setup(User, config) {
           email: profile.emails[0].value,
           role: 'user',
           provider: 'facebook',
-          facebook: profile._json,
+          facebook: profile.id,
+          github: profile.profileUrl
         });
 
         user.save()

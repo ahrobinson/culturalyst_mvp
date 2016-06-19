@@ -1,3 +1,56 @@
-<div>Profile & Cover Photo</div>
+<div class="container" >
+</div>
+
+<div id="steps">
+	<div class="step">
+			<md-button class="md-fab md-raised" id="saveBasicsButton" ui-sref="signupArtist_1" >
+			1
+	   </md-button>
+	</div>
+	<div class="step">
+					<md-button class="md-fab md-raised" id="saveBasicsButton" ui-sref="signupArtist_2" >
+			2
+	   </md-button>
+	</div>
+	<div class="step">
+					<md-button class="md-fab md-raised" id="saveBasicsButton" ui-sref="signupArtist_3" style="background-color: #FFFDE7">
+			3
+	   </md-button>
+	</div>
+	<div class="step">
+					<md-button class="md-fab md-raised" id="saveBasicsButton" ui-sref="signupArtist_4">
+			4
+	   </md-button>
+	</div>
+</div>
+
+<div id="work" class="maxFormWidth" ng-cloak>
+	<md-toolbar class="toolbar_work">
+	  <div class="md-toolbar-tools">
+	   	<h2 class="md-flex">The Work</h2>
+	  </div>
+	  <md-button ng-click="openWork = !openWork">Instructions</md-button>
+    </md-button>
+	</md-toolbar>
+
+	<div class="toggle-content_work" ng-show="openWork">
+	Insert Instructions
+  </div>
+	
+		
+	<md-content layout-padding>
+
+	<p>PUT FILE UPLOADER HERE</p>
+	</md-content>
+
+	 <div id="saveWork">
+		 <md-button class="md-fab md-raised" id="saveWorkButton" aria-label="FAB" ng-click="vm.registerWork()">
+<!-- 	      <md-icon md-svg-icon="enter_black"></md-icon> -->
+	      Save
+	   </md-button>
+	 </div>
+
+</div>
+
 <!-- TODO:Add Url to artistprofile to ui-sref -->
-<md-button id="Save" aria-label="FAB" ui-sref="signupArtist_">Launch Profile</md-button>
+<md-button id="Save" aria-label="FAB" ui-sref="signupArtist_4">Save and Continue</md-button>

@@ -61,11 +61,11 @@ app.controller('NavbarController', ['$scope', '$mdSidenav', 'Auth',
 
 
 
-
-  $scope.menu = [{
-    'title': 'Test',
-    'state': 'test'
-  }, 
-  ];
+// TO ADD TO NAVBAR
+  // $scope.menu = [{
+  //   'title': 'Test',
+  //   'state': 'test'
+  // }, 
+  // ];
 
 }]);

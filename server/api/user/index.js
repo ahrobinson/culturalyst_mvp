@@ -18,6 +18,7 @@ router.put('/:id/updateArtistBasics', auth.isAuthenticated(), controller.updateA
 router.put('/:id/updateArtistArt', auth.isAuthenticated(), controller.updateArtistArt);
 router.put('/:id/updateArtistProperties', auth.isAuthenticated(), controller.updateArtistProperties);
 router.put('/:id/updateArtistStory', auth.isAuthenticated(), controller.updateArtistStory);
+router.put('/:id/launchArtistProfile', auth.isAuthenticated(), controller.launchArtistProfile);
 
 
 module.exports = router;

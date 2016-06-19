@@ -272,6 +272,32 @@ export function updateArtistStory (req, res, next) {
   });
 };
 
+export function launchArtistProfile (req, res, next) {
+  let userId = req.user._id;
+  let profile_pic = req.body.profile_pic;
+  let cover_pic = req.body.cover_pic;
+  let background_pic = req.body.background_pic;
+
+
+  return User.find({
+    where: {
+      _id: userId
+    }
+  }).then(function(user){
+      user.profile_pic = profile_pic;
+      user.cover_pic = cover_pic;
+      user.background_pic = background_pic;
+      user.role = "artist";
+      user.save()
+        .then(function(){
+          res.status(204).end();
+        })
+        .catch(validationError(res));
+  });
+};
+
+
+
 /**
  * Authentication callback
  */

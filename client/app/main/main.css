@@ -9,8 +9,7 @@ Hero Image CSS*/
   background-size: cover;
   display: table;
   width: 100%;
-  height: 400px;
-
+  height: 600px;
 }
 
 /*Md-Fab CSS*/
@@ -144,7 +143,7 @@ Media Queries: Laptops*/
   and (-webkit-min-device-pixel-ratio: 1) { 
 /*    change size of hero photo for large screens
 */   .hero {
-    height: 650px;
+    height: 400px;
    } 
    .picture-overlay{
     height: 650px;
@@ -161,6 +160,14 @@ Media Queries: Laptops*/
   and (min-resolution: 192dpi) { 
 }
 
-
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+     .hero {
+    height: 450px;
+   } 
+}
 
 

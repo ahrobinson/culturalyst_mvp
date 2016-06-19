@@ -1,0 +1,46 @@
+<div class="container" >
+</div>
+
+<div id="steps">
+	<div class="step">
+			<md-button class="md-fab md-raised" id="saveBasicsButton" ui-sref="signupArtist_1" >
+			1
+	   </md-button>
+	</div>
+	<div class="step">
+					<md-button class="md-fab md-raised" id="saveBasicsButton" ui-sref="signupArtist_2" >
+			2
+	   </md-button>
+	</div>
+	<div class="step">
+					<md-button class="md-fab md-raised" id="saveBasicsButton" ui-sref="signupArtist_3">
+			3
+	   </md-button>
+	</div>
+	<div class="step">
+					<md-button class="md-fab md-raised" id="saveBasicsButton" ui-sref="signupArtist_3" style="background-color: #E0F7FA">
+			4
+	   </md-button>
+	</div>
+</div>
+
+	<md-content layout-padding>
+
+		<md-input-container class="md-block">
+	    <label>Profile Pic</label>
+	    <input ng-model="profile_pic" type="dob">
+	  </md-input-container>
+
+	  <md-input-container class="md-block">
+	    <label>Cover Pic</label>
+	    <input ng-model="cover_pic" type="dob">
+	  </md-input-container>
+
+	  <md-input-container class="md-block">
+	    <label>Background Pic</label>
+	    <input ng-model="background_pic" type="dob">
+	  </md-input-container>
+	</md-content>
+
+<!-- TODO: Insert ui-sref to artist profile w/ page reload-->
+<md-button id="Save" aria-label="FAB"  ng-click="vm.launchProfile()">Launch Profile</md-button>

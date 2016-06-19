@@ -65,6 +65,13 @@ angular.module('mvpApp')
         controllerAs: 'vm',
         authenticate: true
       })
+      .state('signupArtist_4', {
+        url: '/signupArtist_4',
+        templateUrl: 'app/account/signupArtist/signupArtist.4.html',
+        controller: 'SignupArtistController',
+        controllerAs: 'vm',
+        authenticate: true
+      })
   })
   .run(function($rootScope) {
     $rootScope.$on('$stateChangeStart', function(event, next, nextParams, current) {

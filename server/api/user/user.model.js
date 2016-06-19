@@ -40,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     provider: DataTypes.STRING,
     salt: DataTypes.STRING,
-    facebook: DataTypes.JSON,
+    facebook: DataTypes.STRING,
     github: DataTypes.JSON,
     neighborhood: DataTypes.STRING,
     hometown: DataTypes.STRING,
@@ -58,7 +58,10 @@ module.exports = function(sequelize, DataTypes) {
     bandcamp: DataTypes.STRING,
     store: DataTypes.STRING,
     spotify: DataTypes.STRING,
-    story: DataTypes.STRING
+    story: DataTypes.STRING,
+    profile_pic: DataTypes.STRING,
+    cover_pic:DataTypes.STRING,
+    background_pic:DataTypes.STRING,
   }, {
 
     /**
