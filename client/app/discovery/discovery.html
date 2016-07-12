@@ -1,5 +1,13 @@
 <div class="page_container">
-	<div class="discover_hero">
-  </div>
+	<!-- <div class="discover_hero">
+  </div> -->
+  <md-input-container style="margin-right: 10px;">
+    <label>Medium of Art</label>
+    <md-select ng-model="medium.main">
+    	<md-option ng-repeat="medium in mediaList" value="{{medium.name}}" ng-change="loadSubMediums(medium)" ng-selected="medium">{{medium.name}} </md-option>
+    </md-select>
+   </md-input-container>
+
+   {{medium.submedium}}
 </div>
 

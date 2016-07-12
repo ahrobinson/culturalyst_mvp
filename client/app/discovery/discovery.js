@@ -5,6 +5,6 @@ angular.module('mvpApp')
     $stateProvider
       .state('discovery', {
         url: '/discovery',
-        template: '<discovery></discovery>'
+        template: '<discovery></discovery>',
       });
   });
