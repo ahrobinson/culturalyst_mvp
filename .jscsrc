@@ -28,6 +28,7 @@
   "disallowSpacesInsideParentheses": true,
   "requireTrailingComma": false,
   "disallowTrailingWhitespace": true,
+  "maxErrors": 50000,
   "requireCommaBeforeLineBreak": true,
   "requireLineFeedAtFileEnd": true,
   "requireSpaceAfterBinaryOperators": ["?", ":", "+", "-", "/", "*", "%", "==", "===", "!=", "!==", ">", ">=", "<", "<=", "&&", "||"],
