@@ -25,20 +25,21 @@
 </div>
 
 	<md-content layout-padding>
-
+    <!--hacky..hide input file for better look-->
+    <input type="file" class="hiddenFilePicker" style="opacity: 0" readonly>
 		<md-input-container class="md-block">
 	    <label>Profile Pic</label>
-	    <input ng-model="profile_pic" type="dob">
+	    <input ng-focus="vm.chooseFile()" ng-model="profile_pic" type="dob">
 	  </md-input-container>
 
 	  <md-input-container class="md-block">
 	    <label>Cover Pic</label>
-	    <input ng-model="cover_pic" type="dob">
+	    <input type="file" ng-model="cover_pic" type="dob">
 	  </md-input-container>
 
 	  <md-input-container class="md-block">
 	    <label>Background Pic</label>
-	    <input ng-model="background_pic" type="dob">
+	    <input type="file" ng-model="background_pic" type="dob">
 	  </md-input-container>
 	</md-content>
 

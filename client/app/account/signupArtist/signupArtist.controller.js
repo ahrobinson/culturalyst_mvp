@@ -1,7 +1,14 @@
 'use strict';
 
-class SignUpArtistController {
+//TODO: Separate into one controller per page
+
+class SignupArtistController {
   constructor(Auth, $scope, $http, $mdToast, MediaList) {
+
+   document.getElementsByClassName('hiddenFilePicker')[0].onclick = function (e) {
+      e.preventDefault();
+    }
+
     this.errors = {};
     this.Auth = Auth;
     this.$scope = $scope;
@@ -168,6 +175,24 @@ class SignUpArtistController {
       // TODO: ADD animation here
     });
   }
+
+  chooseFile() {
+    console.log('hello choose a file');
+  }
+
+  addProfilePic() {
+
+  }
+
+  addCoverPhoto() {
+
+  }
+
+  addBackgroundPic() {
+
+  }
+
+
 }
 
 angular.module('mvpApp')
