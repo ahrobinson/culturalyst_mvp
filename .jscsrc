@@ -27,7 +27,7 @@
   "disallowSpacesInsideArrayBrackets": true,
   "disallowSpacesInsideParentheses": true,
   "requireTrailingComma": false,
-  "disallowTrailingWhitespace": true,
+  "disallowTrailingWhitespace": false,
   "maxErrors": 50000,
   "requireCommaBeforeLineBreak": true,
   "requireLineFeedAtFileEnd": true,
