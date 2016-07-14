@@ -4,11 +4,6 @@
 
 class SignupArtistController {
   constructor(Auth, $scope, $http, $mdToast, MediaList) {
-
-   document.getElementsByClassName('hiddenFilePicker')[0].onclick = function (e) {
-      e.preventDefault();
-    }
-
     this.errors = {};
     this.Auth = Auth;
     this.$scope = $scope;

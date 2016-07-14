@@ -1,11 +1,14 @@
 'use strict';
 
-angular.module('mvpApp.hiddenFileUpload')
+angular.module('mvpApp')
   .directive('hiddenFileUpload', function () {
     return {
-      templateUrl: 'components/hiddenFileUpload/hiddenFileUpload.html',
-      restrict: 'EA',
-      link: function (scope, element, attrs) {
+      template: '<input type="file" class="hiddenFileInput">',
+      restrict: 'E',
+      link: function(scope, element, attrs) {
+        element.bind('click', function(e) {
+          e.preventDefault();
+        });
       }
     };
   });
