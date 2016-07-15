@@ -172,7 +172,9 @@ class SignupArtistController {
   }
 
   chooseFile() {
-    console.log('hello choose a file');
+    document.getElementsByClassName('hiddenFileInput')[0].classList.remove('cantClick');
+    document.getElementsByClassName('hiddenFileInput')[0].click();
+    document.getElementsByClassName('hiddenFileInput')[0].classList.add('cantClick');
   }
 
   addProfilePic() {
