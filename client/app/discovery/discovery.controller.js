@@ -45,10 +45,9 @@
 'use strict';
 
 angular.module('mvpApp')
-.controller('DiscoveryCtrl', function($scope, MediaList, $http, $location){
-  $scope.mediaList = MediaList.getMediaList();
+.controller('DiscoveryCtrl', function($scope, $http, $location){
+ 
 
-  	$scope.SelectedMedium = {name: 'Music'};
 
   	$scope.mediums = [
 			{'name': 'Music', 'submedia': ['Brass', 'Classical', 'Country', 'Experimental', 'Folk', 'Hip-hop', 'Jazz', 'Rock']},
@@ -66,10 +65,16 @@ angular.module('mvpApp')
   ];
   $scope.selectedMedium;
 
+  	$scope.test = function(){
+  		console.log('yo');
+  	}
+
   	$scope.loadSubMediums = function(medium){
-      $scope.selectedMedium = medium.name;
       $scope.submedia = medium.submedia;
+      console.log($scope.submedia);
     };
+
+    $scope.selectedSubmedium;
 
   	$scope.mediaList = [
       {'name': 'Music', 'submedia': ['Brass', 'Classical', 'Country', 'Experimental', 'Folk', 'Hip-hop', 'Jazz', 'Rock']},
