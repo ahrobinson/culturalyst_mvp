@@ -1,9 +1,9 @@
 .page_container{
-	margin-top: 145px;
+	margin-top: 50px;
 }
 
-.discover_hero {
-  background: url('../../assets/images/leaning_trombone.png') no-repeat center center;
+.discovery_hero {
+  background: url('../../assets/images/night-skyline-small.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -11,13 +11,17 @@
   display: table;
   width: 100%;
   height: 600px;
+  z-index: 1;
 }
 
 .media_submedia{
+  margin-top: 100px;
   margin-left: 400px;
   margin-right: 400px;
   z-index: 99;
+  color: white;
 }
+
 
 
 /*Media Queries: Laptops*/

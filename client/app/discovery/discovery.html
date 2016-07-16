@@ -1,7 +1,6 @@
 <div class="page_container">
-<!-- 	<div class="discovery_hero">
+	<div class="discovery_hero">
 		
-	</div> -->
 	  <md-select class="media_submedia" ng-model="selectedMedium" placeholder="Medium" md-on-close="loadSubMediums(selectedMedium)" ng-selected="selectedMedium">
 	    <md-option ng-value="medium" ng-repeat="medium in mediums">{{ medium.name }}</md-option>
 	  </md-select>
@@ -9,10 +8,11 @@
 	  <md-select class="media_submedia" ng-model="selectedSubmedium" placeholder="Genre">
 	  	<md-option ng-value="submedium" ng-repeat="submedium in submedia">{{submedium}}</md-option>
 	  </md-select>
+	</div>
 
-</div>
+</div>	
 
-</div>
+
 
 
 
