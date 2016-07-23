@@ -49,6 +49,31 @@ angular.module('mvpApp')
  
 
 
+
+  //ng-models
+  $scope.selectedMedium;
+  $scope.selectedSubmedium;
+
+  	$scope.loadSubMediums = function(medium){
+  		$scope.selectedMedium = medium.name;
+      $scope.submedia = medium.submedia;
+      console.log($scope.submedia);
+    };
+
+    $scope.test = function(){
+    	console.log($scope.selectedSubmedium);
+    }
+
+
+
+    $scope.getArtists = function() {
+    	console.log($scope.selectedMedium);
+      $http.get('/api/users/discovery/' + $scope.selectedMedium + '/' + $scope.selectedSubmedium).then(function(response) {
+        $scope.artists = response.data;
+        console.log(response.data);
+      })
+    }
+
   	$scope.mediums = [
 			{'name': 'Music', 'submedia': ['Brass', 'Classical', 'Country', 'Experimental', 'Folk', 'Hip-hop', 'Jazz', 'Rock']},
       {'name': 'Writing', 'submedia': ['Fiction', 'Non-Fiction', 'Poetry']},
@@ -63,19 +88,6 @@ angular.module('mvpApp')
       {'name': 'Code', 'submedia': ['Front-end', 'Back-end', 'Full-stack']},
       {'name': 'Sculpture', 'submedia': ['Clay', 'Metal', 'Wood']},
   ];
-  $scope.selectedMedium;
-
-  	$scope.test = function(){
-  		console.log('yo');
-  	}
-
-  	$scope.loadSubMediums = function(medium){
-      $scope.submedia = medium.submedia;
-      console.log($scope.submedia);
-    };
-
-    $scope.selectedSubmedium;
-
   	$scope.mediaList = [
       {'name': 'Music', 'submedia': ['Brass', 'Classical', 'Country', 'Experimental', 'Folk', 'Hip-hop', 'Jazz', 'Rock']},
       {'name': 'Writing', 'submedia': ['Fiction', 'Non-Fiction', 'Poetry']},
@@ -122,17 +134,7 @@ angular.module('mvpApp')
       {"experience": "Hobbyist"}
     ];
 
-    // $scope.getArtists = function() {
-    //   $http.get('/api/users/discovery/' + $scope.selectedMedium + '/' + $scope.selectedSubmedium).then(function(response) {
-    //     $scope.artists = response.data;
-    //     console.log(response.data);
-    //   })
-    // }
 
-    // $scope.loadSubMediums = function(medium){
-    //   $scope.selectedMedium = medium.name;
-    //   $scope.submedia = medium.submedia;
-    // };
 
     // //Note: populatePage = fn for when user clicks on medium button
     // //TODO: Have value of dropdown become pageMedium
