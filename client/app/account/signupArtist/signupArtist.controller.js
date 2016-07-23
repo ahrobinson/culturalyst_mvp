@@ -9,6 +9,7 @@ class SignupArtistController {
     this.$scope = $scope;
     this.$http = $http;
     this.MediaList = MediaList;
+    this.Upload = Upload;
     this.$scope.mediaList = this.MediaList.getMediaList();
     //Getting CurrentUser
     this.$mdToast = $mdToast;
@@ -50,6 +51,14 @@ class SignupArtistController {
         return { abbrev: neighborhood };
       });
   }
+
+  cloudinaryConfig() {
+    return {
+      cloud_name: 'culturalyst',
+      upload_preset: 'lebxtfjo',
+      api_key: '521965896796486'
+    };
+  };
 
   loadGenres(medium) {
     this.$scope.selectedMedium = medium.name;
@@ -172,16 +181,27 @@ class SignupArtistController {
 
   upload(file) {
     console.log(file);
-    Upload.upload({
-      url: 'upload/url',
-      data: {file: file, 'username': $scope.username}
-    }).then(function (resp) {
-      console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-    }, function (resp) {
-      console.log('Error status: ' + resp.status);
-    }, function (evt) {
-      var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-      console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+    this.Upload.upload({
+      url: "https://api.cloudinary.com/v1_1/" + this.cloudinaryConfig().cloud_name + "/upload",
+      fields: {
+        upload_preset: this.cloudinaryConfig().upload_preset,
+        tags: 'myphotoalbum',
+        context: 'photo=' + this.$scope.title
+      },
+      file: file
+    }).progress((e) => {
+      console.log('ln:140 Checking event', e);
+      file.progress = Math.round((e.loaded * 100.0) / e.total);
+      file.status = "Uploading... " + file.progress + "%";
+    }).success((data, status, headers, config) => {
+      // this.$rootScope.photos = this.$rootScope.photos || [];
+      data.context = {custom: {photo: this.$scope.title}};
+      file.result = data;
+      // this.$rootScope.photos.push(data);
+      console.log(data);
+      console.log(data.secure_url);
+    }).error((data, status, headers, config) => {
+      file.result = data;
     });
   }
 

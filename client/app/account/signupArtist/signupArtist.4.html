@@ -27,18 +27,20 @@
 	<md-content layout-padding>
 		<md-input-container class="md-block">
 	    <label>Profile Pic</label>
-      <input id="pictures" label="Upload Images" name="pictures" ngf-select="vm.upload($file)"
-             ng-model="pictures" ngf-pattern="'image/*'" accept="image/jpeg,image/png">
+      <input id="pictures" label="Upload Images" name="profile" ngf-select="vm.upload($file)"
+             ng-model="prof_pic" ngf-pattern="'image/*'" accept="image/jpeg,image/png">
 	  </md-input-container>
 
 	  <md-input-container class="md-block">
 	    <label>Cover Pic</label>
-	    <input type="file" ng-model="cover_pic" type="dob">
+      <input id="pictures" label="Upload Images" name="cover" ngf-select="vm.upload($file)"
+             ng-model="cover_pic" ngf-pattern="'image/*'" accept="image/jpeg,image/png">
 	  </md-input-container>
 
 	  <md-input-container class="md-block">
 	    <label>Background Pic</label>
-	    <input type="file" ng-model="background_pic" type="dob">
+      <input id="pictures" label="Upload Images" name="background" ngf-select="vm.upload($file)"
+             ng-model="bg_pic" ngf-pattern="'image/*'" accept="image/jpeg,image/png">
 	  </md-input-container>
 	</md-content>
 
