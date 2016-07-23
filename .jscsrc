@@ -25,7 +25,7 @@
     "beforeOpeningRoundBrace": true
   },
   "disallowSpacesInsideArrayBrackets": true,
-  "disallowSpacesInsideParentheses": true,
+  "disallowSpacesInsideParentheses": false,
   "requireTrailingComma": false,
   "disallowTrailingWhitespace": false,
   "maxErrors": 50000,

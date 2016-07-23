@@ -12,6 +12,7 @@ angular.module('mvpApp', [
   'validation.match',
   'ngAnimate',
   'ngMaterial',
+  'ngFileUpload'
 ])
   .config(function($urlRouterProvider, $locationProvider, $mdThemingProvider, $mdIconProvider) {
     $urlRouterProvider
@@ -61,7 +62,7 @@ angular.module('mvpApp', [
         'A700': '#b1b1b1'
     };
     $mdThemingProvider
-        .definePalette('customPrimary', 
+        .definePalette('customPrimary',
                         customPrimary);
 
 

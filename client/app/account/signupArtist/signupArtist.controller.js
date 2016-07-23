@@ -3,14 +3,13 @@
 //TODO: Separate into one controller per page
 
 class SignupArtistController {
-  constructor(Auth, $scope, $http, $mdToast, MediaList) {
+  constructor(Auth, $scope, $http, $mdToast, MediaList, Upload) {
     this.errors = {};
     this.Auth = Auth;
     this.$scope = $scope;
     this.$http = $http;
     this.MediaList = MediaList;
     this.$scope.mediaList = this.MediaList.getMediaList();
-
     //Getting CurrentUser
     this.$mdToast = $mdToast;
 
@@ -171,24 +170,24 @@ class SignupArtistController {
     });
   }
 
-  chooseFile() {
-    document.getElementsByClassName('hiddenFileInput')[0].classList.remove('cantClick');
-    document.getElementsByClassName('hiddenFileInput')[0].click();
-    document.getElementsByClassName('hiddenFileInput')[0].classList.add('cantClick');
+  upload(file) {
+    console.log(file);
+    Upload.upload({
+      url: 'upload/url',
+      data: {file: file, 'username': $scope.username}
+    }).then(function (resp) {
+      console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+    }, function (resp) {
+      console.log('Error status: ' + resp.status);
+    }, function (evt) {
+      var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+      console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+    });
   }
 
-  addProfilePic() {
-
+  addPic() {
+    console.log('adding pic');
   }
-
-  addCoverPhoto() {
-
-  }
-
-  addBackgroundPic() {
-
-  }
-
 
 }
 

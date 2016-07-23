@@ -25,11 +25,10 @@
 </div>
 
 	<md-content layout-padding>
-    <!--hacky..hide input file for better look-->
-    <hidden-file-upload></hidden-file-upload>
 		<md-input-container class="md-block">
 	    <label>Profile Pic</label>
-	    <input ng-click="vm.chooseFile()" ng-model="profile_pic" type="dob">
+      <input id="pictures" label="Upload Images" name="pictures" ngf-select="vm.upload($file)"
+             ng-model="pictures" ngf-pattern="'image/*'" accept="image/jpeg,image/png">
 	  </md-input-container>
 
 	  <md-input-container class="md-block">
